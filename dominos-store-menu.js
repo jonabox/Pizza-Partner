@@ -1,4 +1,4 @@
-const storeID = 3748;
+const storeID = 3748; //1033 Mass. Ave
 
 var pizzapi = require('dominos');
 var myStore = new pizzapi.Store(storeID);
