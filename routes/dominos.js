@@ -11,10 +11,9 @@ const router = express.Router();
 router.get('/', function(req, res) {
   myStore.getFriendlyNames(
     function(storeData){
-      res.json(storeData)
+      res.send(storeData);
     }
 );
-  
 });
 
 module.exports = router;
