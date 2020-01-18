@@ -8,6 +8,7 @@ const path = require('path');
 
 const indexRouter = require('./routes/index');
 const dominosRouter = require('./routes/dominos');
+const scheduleRouter = require('./routes/schedule');
 // const usersRouter = require('./routes/users');
 // const sessionRouter = require('./routes/session');
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/', indexRouter);
 app.use('/api',indexRouter);
 app.use('/api/dominos', dominosRouter);
+app.use('/api/schedule', scheduleRouter);
 // app.use('/api/users', usersRouter);
 // app.use('/api/session', sessionRouter);
 
