@@ -20,6 +20,7 @@
       </div>
       <v-tabs background-color="deep-purple" dark right>
         <v-tab to="/">home</v-tab>
+        <v-tab to="/schedule">schedule</v-tab>
         <v-tab to="/about">about</v-tab>
       </v-tabs>
   </v-app-bar>

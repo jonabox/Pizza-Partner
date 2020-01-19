@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
+  <div class="schedule">
     <v-container fluid>
+
+      {{order}}
       <v-row
         dense
         justify="center"
@@ -49,7 +51,7 @@
 import axios from "axios";
 
 export default {
-  name: "home",
+  name: "schedule",
   data() {
     return {
       order: "hey"
@@ -59,7 +61,7 @@ export default {
   created: function() {
   
   axios
-    .get('/api/dominos')
+    .get('/api/schedule/closed/Simmons')
     .then(response => {
       console.log(response);
       this.order = response.data.result;
