@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    asdf
-    <br>
     <v-container fluid>
       <v-row
         dense
