@@ -10,7 +10,9 @@
           v-bind:key="item.id"
           cols="auto" 
         >
-          <v-card>
+          <v-card
+            hover
+          >
             <v-img
               src="../assets/pizza.png"
               class="black--text align-end"
@@ -20,8 +22,8 @@
               contain="true"
               aspect-ratio
             >
-              <v-card-title v-text="Object.keys(item)[0]"></v-card-title>
             </v-img>
+            <v-card-title v-text="Object.keys(item)[0]"></v-card-title>
 
             <v-card-actions>
               <v-spacer></v-spacer>

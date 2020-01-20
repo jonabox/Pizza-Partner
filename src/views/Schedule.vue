@@ -1,29 +1,60 @@
 <template>
   <div class="schedule">
     <v-container fluid>
-
-      {{order}}
+      <v-select
+          :items="validDorms"
+          v-model="selectedDorm"
+          label="Select Dorm"
+          color="deep-purple"
+          item-color="deep-purple"
+          solo
+        ></v-select>
+      <p align="center">
+        Showing partnerships for {{ selectedDorm }}
+      </p>
       <v-row
-        dense
         justify="center"
       >
         <v-col
-          v-for="item in order"
-          v-bind:key="item.id"
+          v-for="partnership in partnerships"
+          v-bind:key="partnership.id"
           cols="auto" 
         >
-          <v-card>
+          <v-card
+            hover
+            shaped
+            outlined
+          >
+
             <v-img
               src="../assets/pizza.png"
               class="black--text align-end"
               gradient="to bottom, rgba(0,0,0,0), rgba(255,255,255,1)"
               height="200px"
-              max-width="300"
+              max-width="300px"
               contain="true"
               aspect-ratio
             >
-              <v-card-title v-text="Object.keys(item)[0]"></v-card-title>
             </v-img>
+            <v-list
+            shaped dense 
+            v-for="order in partnership.orders"
+            v-bind:key="order.id"
+            class="overflow-y-auto" max-height="400"
+            >
+            <v-subheader>{{ order.customer }}'s items:</v-subheader>
+                <v-list-item
+                  v-for="item in order.items"
+                  :key="item"
+                >
+                <v-list-item-content v-text="item"/>
+                </v-list-item>
+                <v-divider/>
+            </v-list>
+
+            <v-card-title
+              v-text="partnership.status"
+            />
 
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -54,19 +85,22 @@ export default {
   name: "schedule",
   data() {
     return {
-      order: "hey"
+      partnerships: "hey",
+      validDorms: ["Simmons", "Masseeh"],
+      selectedDorm: "Simmons"
     };
   },
   
   created: function() {
   
   axios
-    .get('/api/schedule/closed/Simmons')
+    .get('/api/schedule/closed/' + this.selectedDorm)
     .then(response => {
       console.log(response);
-      this.order = response.data.result;
+      this.partnerships = response.data;
     })
     .catch(error => console.log(error));
   }
 };
+
 </script>
