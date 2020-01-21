@@ -1,0 +1,268 @@
+{
+  "Specialty Pizzas": [
+    {
+      "name": "ExtravaganZZa",
+      "code": "S_ZZ"
+    },
+    {
+      "name": "MeatZZa",
+      "code": "S_MX"
+    },
+    {
+      "name": "Philly Cheese Steak",
+      "code": "S_PIZPH"
+    },
+    {
+      "name": "Pacific Veggie",
+      "code": "S_PIZPV"
+    },
+    {
+      "name": "Honolulu Hawaiian",
+      "code": "S_PIZUH"
+    },
+    {
+      "name": "Deluxe",
+      "code": "S_DX"
+    },
+    {
+      "name": "Cali Chicken Bacon Ranch",
+      "code": "S_PIZCR"
+    }
+  ],
+  "Sandwiches": [
+    {
+      "name": "Buffalo Chicken",
+      "code": "S_BUFC"
+    },
+    {
+      "name": "Chicken Habanero",
+      "code": "S_CHHB"
+    },
+    {
+      "name": "Mediterranean Veggie",
+      "code": "S_MEDV"
+    },
+    {
+      "name": "Philly Cheese Steak",
+      "code": "S_PHIL"
+    },
+    {
+      "name": "Chicken Bacon Ranch",
+      "code": "S_CHIKK"
+    },
+    {
+      "name": "Italian",
+      "code": "S_ITAL"
+    },
+    {
+      "name": "Chicken Parm",
+      "code": "S_CHIKP"
+    }
+  ],
+  "Pasta": [
+    {
+      "name": "Chicken Alfredo",
+      "code": "S_ALFR"
+    },
+    {
+      "name": "Italian Sausage Marinara",
+      "code": "S_MARIN"
+    },
+    {
+      "name": "Chicken Carbonara",
+      "code": "S_CARB"
+    },
+    {
+      "name": "Pasta Primavera",
+      "code": "S_PRIM"
+    }
+  ],
+  "Chicken": [
+    {
+      "name": "Specialty Chicken – Crispy Bacon & Tomato",
+      "code": "S_SCCBT"
+    },
+    {
+      "name": "Specialty Chicken – Classic Hot Buffalo",
+      "code": "S_SCCHB"
+    },
+    {
+      "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
+      "code": "S_SCSJP"
+    },
+    {
+      "name": "Specialty Chicken – Sweet BBQ Bacon",
+      "code": "S_SCSBBQ"
+    },
+    {
+      "name": "Hot Wings",
+      "code": "S_HOTWINGS"
+    },
+    {
+      "name": "BBQ Wings",
+      "code": "S_BBQW"
+    },
+    {
+      "name": "Mild Wings",
+      "code": "S_MILDWING"
+    },
+    {
+      "name": "Plain Wings",
+      "code": "S_PLNWINGS"
+    },
+    {
+      "name": "Sweet Mango Habanero Wings",
+      "code": "S_SMANG"
+    },
+    {
+      "name": "Boneless Chicken",
+      "code": "S_BONELESS"
+    }
+  ],
+  "Breads": [
+    {
+      "name": "Parmesan Bread Twists",
+      "code": "F_PARMT"
+    },
+    {
+      "name": "Garlic Bread Twists",
+      "code": "F_GARLICT"
+    },
+    {
+      "name": "Stuffed Cheesy Bread",
+      "code": "F_SCBRD"
+    },
+    {
+      "name": "Stuffed Cheesy Bread with Spinach & Feta",
+      "code": "F_SSBRD"
+    },
+    {
+      "name": "Stuffed Cheesy Bread with Bacon & Jalapeno",
+      "code": "F_SBBRD"
+    },
+    {
+      "name": "Parmesan Bread Bites",
+      "code": "F_PBITES"
+    }
+  ],
+  "Salads": [
+    {
+      "name": "Classic Garden",
+      "code": "F_GARDEN"
+    },
+    {
+      "name": "Chicken Caesar",
+      "code": "F_CCAESAR"
+    }
+  ],
+  "Drinks": [
+    {
+      "name": "Coke®",
+      "code": "F_COKE"
+    },
+    {
+      "name": "Coca-Cola Zero Sugar",
+      "code": "F_ZERO"
+    },
+    {
+      "name": "Diet Coke®",
+      "code": "F_DIET"
+    },
+    {
+      "name": "Sprite®",
+      "code": "F_SPRITE"
+    },
+    {
+      "name": "Dasani® Bottle Water",
+      "code": "F_WATER"
+    },
+    {
+      "name": "Fanta® Orange",
+      "code": "F_ORAN"
+    },
+    {
+      "name": "Lemonade Bottle",
+      "code": "F_LEMND"
+    }
+  ],
+  "Desserts": [
+    {
+      "name": "Cinnamon Bread Twists",
+      "code": "F_CINNAT"
+    },
+    {
+      "name": "Domino's Marbled Cookie Brownie™",
+      "code": "F_MRBRWNE"
+    },
+    {
+      "name": "Chocolate Lava Crunch Cakes",
+      "code": "F_LAVA"
+    }
+  ],
+  "Extras": [
+    {
+      "name": "Kicker Hot Sauce",
+      "code": "F_HOTCUP"
+    },
+    {
+      "name": "Sweet Mango Habanero Sauce",
+      "code": "F_SMHAB"
+    },
+    {
+      "name": "BBQ Sauce",
+      "code": "F_BBQC"
+    },
+    {
+      "name": "Ranch",
+      "code": "F_SIDRAN"
+    },
+    {
+      "name": "Blue Cheese",
+      "code": "F_Bd"
+    },
+    {
+      "name": "Garlic Dipping Sauce",
+      "code": "F_SIDGAR"
+    },
+    {
+      "name": "Icing Dipping Sauce",
+      "code": "F_SIDICE"
+    },
+    {
+      "name": "Marinara Dipping Sauce",
+      "code": "F_SIDMAR"
+    },
+    {
+      "name": "Caesar Dressing",
+      "code": "F_CAESAR"
+    },
+    {
+      "name": "Italian Dressing",
+      "code": "F_ITAL"
+    },
+    {
+      "name": "Ranch Dressing",
+      "code": "F_RANCHPK"
+    },
+    {
+      "name": "St. Jude Donation",
+      "code": "F_STJUDE"
+    },
+    {
+      "name": "Balsamic",
+      "code": "F_BALVIN"
+    },
+    {
+      "name": "Local School Donation",
+      "code": "S_BUFC"
+    },
+    {
+      "name": "Red Pepper Seasoning Flakes",
+      "code": "F_SREDPEP"
+    },
+    {
+      "name": "Grated Parmesan Cheese",
+      "code": "F_SGPARM"
+    }
+  ]
+}
