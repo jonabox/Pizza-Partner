@@ -5,7 +5,7 @@ var pizzapi = require('dominos');
 pizzapi.Util.findNearbyStores(
     '63102',
     'Delivery',
-    function(storeData) {
+    function(storeData) {   
         var Store = new pizzapi.Store(
             {
                 ID: storeData.result.Stores[0].StoreID

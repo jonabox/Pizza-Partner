@@ -2,6 +2,7 @@
   <div class="schedule">
     <v-container fluid>
       <v-select
+          @change="getDorm"
           :items="validDorms"
           v-model="selectedDorm"
           label="Select Dorm"
@@ -28,13 +29,13 @@
 
             <v-img
               src="../assets/pizza.png"
+              lazy-src="../assets/pizza-min.png"
               class="black--text align-end"
               gradient="to bottom, rgba(0,0,0,0), rgba(255,255,255,1)"
-              height="200px"
-              max-width="300px"
+              max-width="500"
               contain="true"
               aspect-ratio
-            >
+    >
             </v-img>
             <v-list
             shaped dense 
@@ -90,16 +91,20 @@ export default {
       selectedDorm: "Simmons"
     };
   },
-  
+
+  methods: {
+    getDorm: function() {
+      axios
+        .get('/api/schedule/all/' + this.selectedDorm)
+        .then(response => {
+          console.log(response);
+          this.partnerships = response.data;
+        })
+        .catch(error => console.log(error));
+    }
+  }, 
   created: function() {
-  
-  axios
-    .get('/api/schedule/closed/' + this.selectedDorm)
-    .then(response => {
-      console.log(response);
-      this.partnerships = response.data;
-    })
-    .catch(error => console.log(error));
+    this.getDorm();
   }
 };
 

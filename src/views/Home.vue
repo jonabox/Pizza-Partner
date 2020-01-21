@@ -1,49 +1,65 @@
 <template>
   <div class="home">
-    <v-container fluid>
-      <v-row
-        dense
-        justify="center"
-      >
-        <v-col
-          v-for="item in order"
-          v-bind:key="item.id"
-          cols="auto" 
+    <template>
+      <v-expansion-panels focusable>
+        <v-expansion-panel
+          v-for="(items, category) in menu"
+          v-bind:key="category.id"
         >
-          <v-card
-            hover
-          >
-            <v-img
-              src="../assets/pizza.png"
-              class="black--text align-end"
-              gradient="to bottom, rgba(0,0,0,0), rgba(255,255,255,1)"
-              height="200px"
-              max-width="300"
-              contain="true"
-              aspect-ratio
-            >
-            </v-img>
-            <v-card-title v-text="Object.keys(item)[0]"></v-card-title>
+          <v-expansion-panel-header v-text="category"/>
+          <v-expansion-panel-content>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
+            <v-container fluid>
+              <v-row
+                
+                justify="start"
+                align="center"
+                
+              >
+                <v-col
+                  v-for="item in items"
+                  v-bind:key="item.id"
+                  cols="auto"
+                  
+                  
+                >
+                  <v-card
+                    hover
+                    max-width="300px"
+                  >
+                    <v-img
+                      src="../assets/pizza.png"
+                      lazy-src="../assets/pizza-min.png"
+                      class="black--text align-end"
+                      gradient="to bottom, rgba(0,0,0,0), rgba(255,255,255,1)"
+                      
+                      aspect-ratio
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                        </v-row>
+                      </template>
+                    </v-img>
+                    <v-card-title 
+                     v-text="item.name"
+                     style="word-break: normal"
+                    >
+                    </v-card-title>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
 
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </template>
 
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
   </div>
 </template>
 
@@ -54,17 +70,17 @@ export default {
   name: "home",
   data() {
     return {
-      order: "hey"
+      menu: "hey"
     };
   },
   
   created: function() {
   
   axios
-    .get('/api/dominos')
+    .get('/api/dominos/menu')
     .then(response => {
       console.log(response);
-      this.order = response.data.result;
+      this.menu = response.data;
     })
     .catch(error => console.log(error));
   }
