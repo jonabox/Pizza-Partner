@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="deep-purple" dense hide-on-scroll="true">
+  <v-app-bar color="deep-purple" dense hide-on-scroll>
       <v-img
         alt="Vuetify Logo"
         class="shrink mr-2"
