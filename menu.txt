@@ -1,0 +1,87 @@
+************ Regular Menu ************
+  Food
+    Pizza
+      Build Your Own
+        [S_PIZZA] Pizza
+      
+      Specialty Pizzas
+        [S_ZZ] ExtravaganZZa
+        [S_MX] MeatZZa
+        [S_PIZPH] Philly Cheese Steak
+        [S_PIZPV] Pacific Veggie
+        [S_PIZUH] Honolulu Hawaiian
+        [S_DX] Deluxe
+        [S_PIZCR] Cali Chicken Bacon Ranch
+        [S_PIZBP] Buffalo Chicken
+        [S_PIZPX] Ultimate Pepperoni
+        [S_PIZCK] Memphis BBQ Chicken
+        [S_PIZCZ] Wisconsin 6 Cheese
+        [S_PISPF] Spinach & Feta
+    Sandwiches
+      Domino's Sandwich Slice™
+      Sandwiches
+        [S_BUFC] Buffalo Chicken
+        [S_CHHB] Chicken Habanero
+        [S_MEDV] Mediterranean Veggie
+        [S_PHIL] Philly Cheese Steak
+        [S_CHIKK] Chicken Bacon Ranch
+        [S_ITAL] Italian
+        [S_CHIKP] Chicken Parm
+      Hoagies
+    Pasta
+      [S_ALFR] Chicken Alfredo
+      [S_MARIN] Italian Sausage Marinara
+      [S_CARB] Chicken Carbonara
+      [S_PRIM] Pasta Primavera
+      [S_BUILD] Build Your Own Pasta
+    Chicken
+      [S_SCCBT] Specialty Chicken – Crispy Bacon & Tomato
+      [S_SCCHB] Specialty Chicken – Classic Hot Buffalo
+      [S_SCSJP] Specialty Chicken – Spicy Jalapeno - Pineapple
+      [S_SCSBBQ] Specialty Chicken – Sweet BBQ Bacon
+      [S_HOTWINGS] Hot Wings
+      [S_BBQW] BBQ Wings
+      [S_MILDWING] Mild Wings
+      [S_PLNWINGS] Plain Wings
+      [S_SMANG] Sweet Mango Habanero Wings
+      [S_BONELESS] Boneless Chicken
+    Breads
+      [F_PARMT] Parmesan Bread Twists
+      [F_GARLICT] Garlic Bread Twists
+      [F_SCBRD] Stuffed Cheesy Bread
+      [F_SSBRD] Stuffed Cheesy Bread with Spinach & Feta
+      [F_SBBRD] Stuffed Cheesy Bread with Bacon & Jalapeno
+      [F_PBITES] Parmesan Bread Bites
+    Salads
+      [F_GARDEN] Classic Garden
+      [F_CCAESAR] Chicken Caesar
+    
+    Drinks
+      [F_COKE] Coke®
+      [F_ZERO] Coca-Cola Zero Sugar
+      [F_DIET] Diet Coke®
+      [F_SPRITE] Sprite®
+      [F_WATER] Dasani® Bottle Water
+      [F_ORAN] Fanta® Orange
+      [F_LEMND] Lemonade Bottle
+    Desserts
+      [F_CINNAT] Cinnamon Bread Twists
+      [F_MRBRWNE] Domino's Marbled Cookie Brownie™
+      [F_LAVA] Chocolate Lava Crunch Cakes
+    Extras
+      [F_HOTCUP] Kicker Hot Sauce
+      [F_SMHAB] Sweet Mango Habanero Sauce
+      [F_BBQC] BBQ Sauce
+      [F_SIDRAN] Ranch
+      [F_Bd] Blue Cheese
+      [F_SIDGAR] Garlic Dipping Sauce
+      [F_SIDICE] Icing Dipping Sauce
+      [F_SIDMAR] Marinara Dipping Sauce
+      [F_CAESAR] Caesar Dressing
+      [F_ITAL] Italian Dressing
+      [F_RANCHPK] Ranch Dressing
+      [F_STJUDE] St. Jude Donation
+      [F_BALVIN] Balsamic
+      [F__SCHOOL] Local Donation
+      [F_SREDPEP] Red Pepper Seasoning Flakes
+      [F_SGPARM] Grated Parmesan Cheese

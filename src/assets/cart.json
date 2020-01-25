@@ -1,246 +1,368 @@
 {
   "S_ZZ": {
     "name": "ExtravaganZZa",
+    "code": "S_ZZ",
+    "price": 5,
     "count": 0
   },
   "S_MX": {
     "name": "MeatZZa",
+    "code": "S_MX",
+    "price": 5,
     "count": 0
   },
   "S_PIZPH": {
     "name": "Philly Cheese Steak",
+    "code": "S_PIZPH",
+    "price": 5,
     "count": 0
   },
   "S_PIZPV": {
     "name": "Pacific Veggie",
+    "code": "S_PIZPV",
+    "price": 5,
     "count": 0
   },
   "S_PIZUH": {
     "name": "Honolulu Hawaiian",
+    "code": "S_PIZUH",
+    "price": 5,
     "count": 0
   },
   "S_DX": {
     "name": "Deluxe",
+    "code": "S_DX",
+    "price": 5,
     "count": 0
   },
   "S_PIZCR": {
     "name": "Cali Chicken Bacon Ranch",
+    "code": "S_PIZCR",
+    "price": 5,
     "count": 0
   },
   "S_BUFC": {
-    "name": "Local School Donation",
+    "name": "Buffalo Chicken",
+    "code": "S_BUFC",
+    "price": 5,
     "count": 0
   },
   "S_CHHB": {
     "name": "Chicken Habanero",
+    "code": "S_CHHB",
+    "price": 5,
     "count": 0
   },
   "S_MEDV": {
     "name": "Mediterranean Veggie",
+    "code": "S_MEDV",
+    "price": 5,
     "count": 0
   },
   "S_PHIL": {
     "name": "Philly Cheese Steak",
+    "code": "S_PHIL",
+    "price": 5,
     "count": 0
   },
   "S_CHIKK": {
     "name": "Chicken Bacon Ranch",
+    "code": "S_CHIKK",
+    "price": 5,
     "count": 0
   },
   "S_ITAL": {
     "name": "Italian",
+    "code": "S_ITAL",
+    "price": 5,
     "count": 0
   },
   "S_CHIKP": {
     "name": "Chicken Parm",
+    "code": "S_CHIKP",
+    "price": 5,
     "count": 0
   },
   "S_ALFR": {
     "name": "Chicken Alfredo",
+    "code": "S_ALFR",
+    "price": 5,
     "count": 0
   },
   "S_MARIN": {
     "name": "Italian Sausage Marinara",
+    "code": "S_MARIN",
+    "price": 5,
     "count": 0
   },
   "S_CARB": {
     "name": "Chicken Carbonara",
+    "code": "S_CARB",
+    "price": 5,
     "count": 0
   },
   "S_PRIM": {
     "name": "Pasta Primavera",
+    "code": "S_PRIM",
+    "price": 5,
     "count": 0
   },
   "S_SCCBT": {
     "name": "Specialty Chicken – Crispy Bacon & Tomato",
+    "code": "S_SCCBT",
+    "price": 5,
     "count": 0
   },
   "S_SCCHB": {
     "name": "Specialty Chicken – Classic Hot Buffalo",
+    "code": "S_SCCHB",
+    "price": 5,
     "count": 0
   },
   "S_SCSJP": {
     "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
+    "code": "S_SCSJP",
+    "price": 5,
     "count": 0
   },
   "S_SCSBBQ": {
     "name": "Specialty Chicken – Sweet BBQ Bacon",
+    "code": "S_SCSBBQ",
+    "price": 5,
     "count": 0
   },
   "S_HOTWINGS": {
     "name": "Hot Wings",
+    "code": "S_HOTWINGS",
+    "price": 5,
     "count": 0
   },
   "S_BBQW": {
     "name": "BBQ Wings",
+    "code": "S_BBQW",
+    "price": 5,
     "count": 0
   },
   "S_MILDWING": {
     "name": "Mild Wings",
+    "code": "S_MILDWING",
+    "price": 5,
     "count": 0
   },
   "S_PLNWINGS": {
     "name": "Plain Wings",
+    "code": "S_PLNWINGS",
+    "price": 5,
     "count": 0
   },
   "S_SMANG": {
     "name": "Sweet Mango Habanero Wings",
+    "code": "S_SMANG",
+    "price": 5,
     "count": 0
   },
   "S_BONELESS": {
     "name": "Boneless Chicken",
+    "code": "S_BONELESS",
+    "price": 5,
     "count": 0
   },
   "F_PARMT": {
     "name": "Parmesan Bread Twists",
+    "code": "F_PARMT",
+    "price": 5,
     "count": 0
   },
   "F_GARLICT": {
     "name": "Garlic Bread Twists",
+    "code": "F_GARLICT",
+    "price": 5,
     "count": 0
   },
   "F_SCBRD": {
     "name": "Stuffed Cheesy Bread",
+    "code": "F_SCBRD",
+    "price": 5,
     "count": 0
   },
   "F_SSBRD": {
     "name": "Stuffed Cheesy Bread with Spinach & Feta",
+    "code": "F_SSBRD",
+    "price": 5,
     "count": 0
   },
   "F_SBBRD": {
     "name": "Stuffed Cheesy Bread with Bacon & Jalapeno",
+    "code": "F_SBBRD",
+    "price": 5,
     "count": 0
   },
   "F_PBITES": {
     "name": "Parmesan Bread Bites",
+    "code": "F_PBITES",
+    "price": 5,
     "count": 0
   },
   "F_GARDEN": {
     "name": "Classic Garden",
+    "code": "F_GARDEN",
+    "price": 5,
     "count": 0
   },
   "F_CCAESAR": {
     "name": "Chicken Caesar",
+    "code": "F_CCAESAR",
+    "price": 5,
     "count": 0
   },
   "F_COKE": {
     "name": "Coke®",
+    "code": "F_COKE",
+    "price": 5,
     "count": 0
   },
   "F_ZERO": {
     "name": "Coca-Cola Zero Sugar",
+    "code": "F_ZERO",
+    "price": 5,
     "count": 0
   },
   "F_DIET": {
     "name": "Diet Coke®",
+    "code": "F_DIET",
+    "price": 5,
     "count": 0
   },
   "F_SPRITE": {
     "name": "Sprite®",
+    "code": "F_SPRITE",
+    "price": 5,
     "count": 0
   },
   "F_WATER": {
     "name": "Dasani® Bottle Water",
+    "code": "F_WATER",
+    "price": 5,
     "count": 0
   },
   "F_ORAN": {
     "name": "Fanta® Orange",
+    "code": "F_ORAN",
+    "price": 5,
     "count": 0
   },
   "F_LEMND": {
     "name": "Lemonade Bottle",
+    "code": "F_LEMND",
+    "price": 5,
     "count": 0
   },
   "F_CINNAT": {
     "name": "Cinnamon Bread Twists",
+    "code": "F_CINNAT",
+    "price": 5,
     "count": 0
   },
   "F_MRBRWNE": {
     "name": "Domino's Marbled Cookie Brownie™",
+    "code": "F_MRBRWNE",
+    "price": 5,
     "count": 0
   },
   "F_LAVA": {
     "name": "Chocolate Lava Crunch Cakes",
+    "code": "F_LAVA",
+    "price": 5,
     "count": 0
   },
   "F_HOTCUP": {
     "name": "Kicker Hot Sauce",
+    "code": "F_HOTCUP",
+    "price": 5,
     "count": 0
   },
   "F_SMHAB": {
     "name": "Sweet Mango Habanero Sauce",
+    "code": "F_SMHAB",
+    "price": 5,
     "count": 0
   },
   "F_BBQC": {
     "name": "BBQ Sauce",
+    "code": "F_BBQC",
+    "price": 5,
     "count": 0
   },
   "F_SIDRAN": {
     "name": "Ranch",
+    "code": "F_SIDRAN",
+    "price": 5,
     "count": 0
   },
   "F_Bd": {
     "name": "Blue Cheese",
+    "code": "F_Bd",
+    "price": 5,
     "count": 0
   },
   "F_SIDGAR": {
     "name": "Garlic Dipping Sauce",
+    "code": "F_SIDGAR",
+    "price": 5,
     "count": 0
   },
   "F_SIDICE": {
     "name": "Icing Dipping Sauce",
+    "code": "F_SIDICE",
+    "price": 5,
     "count": 0
   },
   "F_SIDMAR": {
     "name": "Marinara Dipping Sauce",
+    "code": "F_SIDMAR",
+    "price": 5,
     "count": 0
   },
   "F_CAESAR": {
     "name": "Caesar Dressing",
+    "code": "F_CAESAR",
+    "price": 5,
     "count": 0
   },
   "F_ITAL": {
     "name": "Italian Dressing",
+    "code": "F_ITAL",
+    "price": 5,
     "count": 0
   },
   "F_RANCHPK": {
     "name": "Ranch Dressing",
+    "code": "F_RANCHPK",
+    "price": 5,
     "count": 0
   },
   "F_STJUDE": {
     "name": "St. Jude Donation",
+    "code": "F_STJUDE",
+    "price": 5,
     "count": 0
   },
   "F_BALVIN": {
     "name": "Balsamic",
+    "code": "F_BALVIN",
+    "price": 5,
     "count": 0
   },
   "F_SREDPEP": {
     "name": "Red Pepper Seasoning Flakes",
+    "code": "F_SREDPEP",
+    "price": 5,
     "count": 0
   },
   "F_SGPARM": {
     "name": "Grated Parmesan Cheese",
+    "code": "F_SGPARM",
+    "price": 5,
     "count": 0
   }
 }

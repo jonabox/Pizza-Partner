@@ -48,9 +48,29 @@ router.get('/menu', function (req, res) {
   );
 });
 
-/* GET /api/dominos/pricing page. */
+/* GET /api/dominos/pricing/:product page. */
 router.get('/pricing/:product', function (req, res) {
   let productCode = req.params.product;
+  let variantCode = bigMenu.result.Products[productCode].Variants[0];
+
+  order.addItem(
+    new pizzapi.Item(
+      {
+        code: variantCode,
+        options: [],
+        quantity: 1
+      }
+    )
+  );
+  order.price(
+    function (response) {
+      res.send("$" + response.result.Order.Amounts.Payment);
+    }
+  );
+});
+/* GET /api/dominos/pricing page. */
+router.get('/pricing/', function (req, res) {
+  let cart = req.body;
   let variantCode = bigMenu.result.Products[productCode].Variants[0];
 
   order.addItem(

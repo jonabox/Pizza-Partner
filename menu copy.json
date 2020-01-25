@@ -1,0 +1,81 @@
+{
+  "Specialty Pizzas": [
+    {"ExtravaganZZa": "S_ZZ"},
+    {"MeatZZa": "S_MX"},
+    {"Philly Cheese Steak": "S_PIZPH"},
+    {"Pacific Veggie": "S_PIZPV"},
+    {"Honolulu Hawaiian": "S_PIZUH"},
+    {"Deluxe": "S_DX"},
+    {"Cali Chicken Bacon Ranch": "S_PIZCR"}
+  ],
+  "Sandwiches": [
+    {"Buffalo Chicken": "S_BUFC"},
+    {"Chicken Habanero": "S_CHHB"},
+    {"Mediterranean Veggie": "S_MEDV"},
+    {"Philly Cheese Steak": "S_PHIL"},
+    {"Chicken Bacon Ranch": "S_CHIKK"},
+    {"Italian": "S_ITAL"},
+    {"Chicken Parm": "S_CHIKP"}
+    ],
+  "Pasta": [
+    {"Chicken Alfredo": "S_ALFR"},
+    {"Italian Sausage Marinara": "S_MARIN"},
+    {"Chicken Carbonara": "S_CARB"},
+    {"Pasta Primavera": "S_PRIM"}
+    ],
+  "Chicken": [
+    {"Specialty Chicken – Crispy Bacon & Tomato": "S_SCCBT"},
+    {"Specialty Chicken – Classic Hot Buffalo": "S_SCCHB"},
+    {"Specialty Chicken – Spicy Jalapeno - Pineapple": "S_SCSJP"},
+    {"Specialty Chicken – Sweet BBQ Bacon": "S_SCSBBQ"},
+    {"Hot Wings": "S_HOTWINGS"},
+    {"BBQ Wings": "S_BBQW"},
+    {"Mild Wings": "S_MILDWING"},
+    {"Plain Wings": "S_PLNWINGS"},
+    {"Sweet Mango Habanero Wings": "S_SMANG"},
+    {"Boneless Chicken": "S_BONELESS"}
+    ],
+  "Breads": [
+    {"Parmesan Bread Twists": "F_PARMT"},
+    {"Garlic Bread Twists": "F_GARLICT"},
+    {"Stuffed Cheesy Bread": "F_SCBRD"},
+    {"Stuffed Cheesy Bread with Spinach & Feta": "F_SSBRD"},
+    {"Stuffed Cheesy Bread with Bacon & Jalapeno": "F_SBBRD"},
+    {"Parmesan Bread Bites": "F_PBITES"}
+    ],
+  "Salads": [
+    {"Classic Garden": "F_GARDEN"},
+    {"Chicken Caesar": "F_CCAESAR"}
+    ],
+  "Drinks": [
+    {"Coke®": "F_COKE"},
+    {"Coca-Cola Zero Sugar": "F_ZERO"},
+    {"Diet Coke®": "F_DIET"},
+    {"Sprite®": "F_SPRITE"},
+    {"Dasani® Bottle Water": "F_WATER"},
+    {"Fanta® Orange": "F_ORAN"},
+    {"Lemonade Bottle": "F_LEMND"}
+    ],
+  "Desserts": [
+    {"Cinnamon Bread Twists": "F_CINNAT"},
+    {"Domino's Marbled Cookie Brownie™": "F_MRBRWNE"},
+    {"Chocolate Lava Crunch Cakes": "F_LAVA"}
+    ],
+  "Extras": [
+    {"Kicker Hot Sauce": "F_HOTCUP"},
+    {"Sweet Mango Habanero Sauce": "F_SMHAB"},
+    {"BBQ Sauce": "F_BBQC"},
+    {"Ranch": "F_SIDRAN"},
+    {"Blue Cheese": "F_Bd"},
+    {"Garlic Dipping Sauce": "F_SIDGAR"},
+    {"Icing Dipping Sauce": "F_SIDICE"},
+    {"Marinara Dipping Sauce": "F_SIDMAR"},
+    {"Caesar Dressing": "F_CAESAR"},
+    {"Italian Dressing": "F_ITAL"},
+    {"Ranch Dressing": "F_RANCHPK"},
+    {"St. Jude Donation": "F_STJUDE"},
+    {"Balsamic": "F_BALVIN"},
+    {"Red Pepper Seasoning Flakes": "F_SREDPEP"},
+    {"Grated Parmesan Cheese": "F_SGPARM"}
+    ]
+}

@@ -28,12 +28,11 @@
                           <v-card-title v-text="item.name" style="word-break: normal"></v-card-title>
                           <v-card-subtitle>$5</v-card-subtitle>
                           <v-card-actions>
-                            <v-spacer></v-spacer>
-
+                            <v-spacer />
                             <v-btn
                               color="deep-purple lighten-2"
                               class="ma-2 white--text"
-                              v-on:click="addToCart(item)"
+                              v-on:click="addToCart(item.code)"
                             >
                               Add to order
                               <v-icon right dark>mdi-playlist-plus</v-icon>
@@ -53,9 +52,7 @@
             <v-card-subtitle v-if="addedToCart.length == 0">Cart is empty</v-card-subtitle>
             <div v-else>
               <v-card-actions>
-                <v-card-title>
-                  Total: ${{ addedToCart.length * 5 }}
-                </v-card-title>
+                <v-card-title>Total: ${{ getTotal }}</v-card-title>
                 <v-spacer />
                 <v-btn color="green" class="ma-2 white--text" to="/schedule">
                   checkout
@@ -64,12 +61,35 @@
               </v-card-actions>
               <v-list>
                 <div v-for="item in addedToCart" :key="item.id">
-                  <v-divider :inset="inset"></v-divider>
-                  <v-list-item>
-                    <v-list-item-content>
-                      <v-list-item-title v-text="item.name"></v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
+                  <div v-if="item.count > 0">
+                    <v-divider></v-divider>
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-list-item-title v-text="item.name"></v-list-item-title>
+                        <v-list-item-subtitle>Quantity: {{ item.count }}</v-list-item-subtitle>
+                      </v-list-item-content>
+                      <v-list-item-action>
+                        <v-btn
+                          x-small
+                          color="deep-purple lighten-1"
+                          fab
+                          v-on:click="addToCart(item.code)"
+                        >
+                          <v-icon color="white">mdi-plus</v-icon>
+                        </v-btn>
+                      </v-list-item-action>
+                      <v-list-item-action>
+                        <v-btn
+                          x-small
+                          color="deep-purple lighten-1"
+                          fab
+                          v-on:click="removeFromCart(item.code)"
+                        >
+                          <v-icon color="white">mdi-minus</v-icon>
+                        </v-btn>
+                      </v-list-item-action>
+                    </v-list-item>
+                  </div>
                 </div>
               </v-list>
             </div>
@@ -82,25 +102,34 @@
 
 <script>
 import axios from "axios";
+import cart from "../assets/cart.json";
 
 export default {
   name: "home",
   data() {
     return {
       menu: "",
-      addedToCart: []
+      addedToCart: cart
     };
+  },
+  computed: {
+    getTotal: function() {
+      let total = 0;
+      for (let itemCode in this.addedToCart) {
+        if (this.addedToCart[itemCode].count > 0) {
+          total += this.addedToCart[itemCode].price * this.addedToCart[itemCode].count;
+        }
+      }
+      return total;
+    }
   },
 
   methods: {
-    addToCart: function(item) {
-      this.addedToCart.push(item);
+    addToCart: function(itemCode) {
+      this.addedToCart[itemCode].count += 1;
     },
-    removeFromCart: function(item) {
-      this.addedToCart.push(item);
-    },
-    getHello: function() {
-      return "hi";
+    removeFromCart: function(itemCode) {
+      this.addedToCart[itemCode].count -= 1;
     },
     getItemPrice: function() {
       return "$5";
