@@ -1,6 +1,6 @@
 const express = require('express');
-const stripe = require('stripe')('sk_test_UH5YHzDrRMdIO0VOW25KzBqh00ax8Rv8fU');
 const storeID = 3748; //1033 Mass. Ave
+const stripe = require('stripe')('sk_test_UH5YHzDrRMdIO0VOW25KzBqh00ax8Rv8fU');
 
 var pizzapi = require('dominos');
 var myStore = new pizzapi.Store(storeID);
@@ -91,15 +91,16 @@ router.get('/pricing/', function (req, res) {
 });
 
 /* GET /api/dominos/session page. */
-router.get('/session', function (req, res) {
+router.get('/session/:total', function (req, res) {
   (async () => {
+    let total = req.params.total;
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [{
-        name: 'T-shirt',
-        description: 'Comfortable cotton t-shirt',
+        name: 'Pizza',
+        description: 'Order from Pizza Partner',
         images: ['https://example.com/t-shirt.png'],
-        amount: 500,
+        amount: total,
         currency: 'usd',
         quantity: 1,
       }],
@@ -108,6 +109,21 @@ router.get('/session', function (req, res) {
     });
     console.log("session:");
     console.log(session);
+  }
+  )();
+});
+
+/* GET /api/dominos/session page. */
+router.get('/charge/:token', function (req, res) {
+  (async () => {
+    let token = req.params.token;
+    const charge = await stripe.charges.create({
+      amount: 50 * 100,
+      currency: 'usd',
+      description: 'Example charge',
+      source: token,
+    });
+    console.log(charge);
   }
   )();
 });

@@ -5,19 +5,12 @@
         <v-col cols="9">
           <template>
             <v-expansion-panels focusable>
-              <v-expansion-panel
-                v-for="(items, category) in menu"
-                v-bind:key="category.id"
-              >
+              <v-expansion-panel v-for="(items, category) in menu" v-bind:key="category.id">
                 <v-expansion-panel-header v-text="category" />
                 <v-expansion-panel-content>
                   <v-container fluid>
                     <v-row justify="start" align="center">
-                      <v-col
-                        v-for="item in items"
-                        v-bind:key="item.id"
-                        cols="auto"
-                      >
+                      <v-col v-for="item in items" v-bind:key="item.id" cols="auto">
                         <v-card hover max-width="300px">
                           <v-img
                             v-bind:src="item.imageURL"
@@ -27,22 +20,12 @@
                             aspect-ratio
                           >
                             <template v-slot:placeholder>
-                              <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                              >
-                                <v-progress-circular
-                                  indeterminate
-                                  color="grey lighten-5"
-                                ></v-progress-circular>
+                              <v-row class="fill-height ma-0" align="center" justify="center">
+                                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                               </v-row>
                             </template>
                           </v-img>
-                          <v-card-title
-                            v-text="item.name"
-                            style="word-break: normal"
-                          ></v-card-title>
+                          <v-card-title style="word-break: normal" v-text="item.name"></v-card-title>
                           <v-card-subtitle>$5</v-card-subtitle>
                           <v-card-actions>
                             <v-spacer />
@@ -66,16 +49,12 @@
         </v-col>
         <v-col>
           <v-card dense>
-            <v-card-subtitle v-if="addedToCart.length == 0"
-              >Cart is empty</v-card-subtitle
-            >
+            <v-card-subtitle style="word-break: normal" v-if="getTotal == 0">Cart is empty</v-card-subtitle>
             <div v-else>
               <v-card-actions>
-                <v-card-title style="word-break: normal"
-                  >Total: ${{ getTotal }}</v-card-title
-                >
+                <v-card-title style="word-break: normal">Total: ${{ getTotal }}</v-card-title>
                 <v-spacer />
-                <v-btn color="green" class="ma-2 white--text">
+                <v-btn color="green" class="ma-2 white--text" v-on:click="showCheck = true">
                   checkout
                   <v-icon right dark>mdi-playlist-check</v-icon>
                 </v-btn>
@@ -86,14 +65,8 @@
                     <v-divider></v-divider>
                     <v-list-item>
                       <v-list-item-content>
-                        <v-list-item-title
-                          v-text="item.name"
-                          style="word-break: normal"
-                          >></v-list-item-title
-                        >
-                        <v-list-item-subtitle
-                          >Quantity: {{ item.count }}</v-list-item-subtitle
-                        >
+                        <v-list-item-title style="word-break: normal" v-text="item.name">></v-list-item-title>
+                        <v-list-item-subtitle style="word-break: normal">Quantity: {{ item.count }}</v-list-item-subtitle>
                       </v-list-item-content>
                       <v-list-item-action>
                         <v-btn
@@ -124,21 +97,63 @@
         </v-col>
       </v-row>
     </v-container>
+    <div class="text-center">
+      <v-dialog v-model="showCheck" width="50%">
+        <template v-slot:activator="{ on }">
+          <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
+        </template>
+
+        <v-card>
+          <v-card-title style="word-break: normal"
+            primary-title
+          >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.</v-card-title>
+
+          <v-card-subtitle style="word-break: normal">Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
+          <card
+            class="stripe-card"
+            :class="{ complete }"
+            stripe="pk_test_LU90MiDvOMQN2TtHMybNODUH00HSFtn6eC"
+            :options="stripeOptions"
+            @change="complete = $event.complete"
+          />
+          
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="primary" text @click="showCheck = false">close</v-btn>
+            <v-btn color="deep-purple lighten-2" class="pay-with-stripe ma-2 white--text" v-on:click="pay" :disabled="!complete">Pay with credit card</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import cart from "../assets/cart.json";
+import { Card, createToken } from "vue-stripe-elements-plus";
 
 export default {
   name: "home",
   data() {
     return {
       menu: "",
-      addedToCart: cart
+      showCheck: false,
+      addedToCart: cart,
+      complete: false,
+      stripeOptions: {
+        hidePostalCode: false,
+        style: {
+          base: {
+            fontSize: "32px"
+          }
+        }
+      }
     };
   },
+  components: { Card },
+
   computed: {
     getTotal: function() {
       let total = 0;
@@ -159,15 +174,17 @@ export default {
     removeFromCart: function(itemCode) {
       this.addedToCart[itemCode].count -= 1;
     },
-    getItemPrice: function() {
-      return "$5";
-      // axios
-      //   .get("/api/dominos/pricing/" + itemCode)
-      //   .then(response => {
-      //     console.log(response);
-      //     return response;
-      //   })
-      //   .catch(error => console.log(error));
+    pay() {
+      createToken().then(data => {
+        console.log(data.token);
+        //send token to server
+        axios
+          .get("/api/dominos/charge/" + data.token.id)
+          .then(response => {
+            console.log(response);
+          })
+          .catch(error => console.log(error));
+      });
     }
   },
 
@@ -182,3 +199,13 @@ export default {
   }
 };
 </script>
+<style scoped>
+.stripe-card {
+  padding: 1em;
+  min-width: 100%;
+  border: 1px solid grey;
+}
+.stripe-card.complete {
+  border-color: green;
+}
+</style>

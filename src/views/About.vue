@@ -8,12 +8,15 @@
       :options="stripeOptions"
       @change="complete = $event.complete"
     />
-    <button class="pay-with-stripe" @click="pay" :disabled="!complete">Pay with credit card</button>
+    <v-btn 
+    class="pay-with-stripe" v-on:click="pay" :disabled="!complete"
+    >
+    Pay with credit card
+    </v-btn>
   </div>
 </template>
  
 <script>
-import { stripeKey, stripeOptions } from "../stripeConfig.json";
 import axios from "axios";
 import { Card, createToken } from "vue-stripe-elements-plus";
 
@@ -22,7 +25,12 @@ export default {
     return {
       complete: false,
       stripeOptions: {
-        // see https://stripe.com/docs/stripe.js#element-options for details
+        hidePostalCode: false,
+        style: {
+          base: {
+            fontSize: '32px',
+          }
+        }
       }
     };
   },
@@ -31,21 +39,14 @@ export default {
 
   methods: {
     pay() {
-      // createToken returns a Promise which resolves in a result object with
-      // either a token or an error key.
-      // See https://stripe.com/docs/api#tokens for the token object.
-      // See https://stripe.com/docs/api#errors for the error object.
-      // More general https://stripe.com/docs/stripe.js#stripe-create-token.
-      console.log(stripeOptions);
-      console.log(stripeKey);
       createToken().then(data => {
         console.log(data.token);
         //send token to server
         axios
-          .get("/api/dominos/charge")
+          .get("/api/dominos/charge/" + data.token.id)
           .then(response => {
             console.log(response);
-            this.menu = response.data;
+            // this.menu = response.data;
           })
           .catch(error => console.log(error));
       });
@@ -56,7 +57,9 @@ export default {
  
 <style>
 .stripe-card {
-  width: 300px;
+  width: 50%;
+  padding: 1em;
+  min-width: 600px;
   border: 1px solid grey;
 }
 .stripe-card.complete {
