@@ -1,4 +1,4 @@
-# pizza-ally
+# pizza-partner
 
 ## Project setup
 ```
@@ -13,6 +13,7 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+npm run start
 ```
 
 ### Lints and fixes files

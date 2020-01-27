@@ -97,38 +97,33 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-btn v-on:click="mockPay">mock pay</v-btn>
     <div class="text-center">
       <v-dialog v-model="showCheck" width="50%">
         <template v-slot:activator="{ on }">
           <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
         </template>
-
         <v-card>
-          <v-card-title
-            
-            style="word-break: normal"
-            primary-title
-          >
-          <div v-if="!selectedDorm">
-            ${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.
-          </div>
-          <div v-else>
-            ${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.
-          </div>
-          
+          <v-card-title style="word-break: normal" primary-title>
+            <div
+              v-if="!selectedDorm"
+            >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.</div>
+            <div
+              v-else
+            >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.</div>
           </v-card-title>
 
           <v-card-subtitle
             style="word-break: normal"
           >Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
           <div class="px-2">
-          <card
-            class="stripe-card"
-            :class="{ complete }"
-            stripe="pk_test_LU90MiDvOMQN2TtHMybNODUH00HSFtn6eC"
-            :options="stripeOptions"
-            @change="complete = $event.complete"
-          />
+            <card
+              class="stripe-card"
+              :class="{ complete }"
+              stripe="pk_test_LU90MiDvOMQN2TtHMybNODUH00HSFtn6eC"
+              :options="stripeOptions"
+              @change="complete = $event.complete"
+            />
           </div>
           <v-card-actions>
             <v-select
@@ -136,19 +131,31 @@
               :items="validDorms"
               v-model="selectedDorm"
               label="Select Dorm"
-              color="deep-purple"
-              item-color="deep-purple"
+              color="deep-purple lighten-2"
+              item-color="deep-purple lighten-2"
               @input="updateValue($event.target.value)"
+              class="px-2"
             ></v-select>
+            <v-form v-model="valid">
+            <v-text-field
+            v-model="customerName"
+            :rules="nameRules"
+            :counter="20"
+            label="Your Name"
+            required
+          ></v-text-field>
+            </v-form>
             <v-spacer></v-spacer>
             <v-btn color="primary" text @click="showCheck = false">close</v-btn>
             <v-btn
               color="deep-purple lighten-2"
               class="pay-with-stripe ma-2 white--text"
               v-on:click="pay"
-              :disabled="!complete || !selectedDorm"
+              :disabled="!complete || !selectedDorm || !customerName"
             >Pay with credit card</v-btn>
+            
           </v-card-actions>
+          
         </v-card>
       </v-dialog>
     </div>
@@ -169,6 +176,12 @@ export default {
       showCheck: false,
       addedToCart: cart,
       complete: false,
+      valid: false,
+      customerName: null,
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 20 || 'Name must be at most 20 characters',
+      ],
       selectedDorm: null,
       stripeOptions: {
         hidePostalCode: false,
@@ -213,6 +226,21 @@ export default {
           })
           .catch(error => console.log(error));
       });
+    },
+    mockPay() {
+      console.log(this.addedToCart);
+      //send token to server
+      axios
+        .post("/api/dominos/charge/", {
+          cart: this.addedToCart,
+          customer: "Jona",
+          dorm: "Simmons",
+          token: "replace this later"
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => console.log(error));
     }
   },
 
@@ -235,5 +263,6 @@ export default {
 }
 .stripe-card.complete {
   border-color: green;
+  border-radius: 10px;
 }
 </style>

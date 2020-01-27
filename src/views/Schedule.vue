@@ -18,16 +18,6 @@
           cols="auto"
         >
           <v-card hover shaped outlined>
-            <v-img
-              src="../assets/pizza.png"
-              lazy-src="../assets/pizza-min.png"
-              class="black--text align-end"
-              gradient="to bottom, rgba(0,0,0,0), rgba(255,255,255,1)"
-              max-width="500"
-              contain="true"
-              aspect-ratio
-            >
-            </v-img>
             <v-list
               shaped
               dense
@@ -38,7 +28,9 @@
             >
               <v-subheader>{{ order.customer }}'s items:</v-subheader>
               <v-list-item v-for="item in order.items" :key="item">
-                <v-list-item-content v-text="item" />
+                <v-list-item-content>
+                   {{item.name}} ({{item.count}}x)
+                </v-list-item-content>
               </v-list-item>
               <v-divider />
             </v-list>

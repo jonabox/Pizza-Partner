@@ -1,4 +1,5 @@
 const express = require('express');
+const Schedule = require('../models/Schedule');
 const storeID = 3748; //1033 Mass. Ave
 const stripe = require('stripe')('sk_test_UH5YHzDrRMdIO0VOW25KzBqh00ax8Rv8fU');
 
@@ -124,6 +125,17 @@ router.get('/charge/:token', function (req, res) {
       source: token,
     });
     console.log(charge);
+  }
+  )();
+});
+/* POST /api/dominos/session page. MOCK*/
+router.post('/charge/', function (req, res) {
+  (async () => {
+    let cart = req.body.cart;
+    let customer = req.body.customer;
+    let dorm = req.body.dorm;
+    let token = req.body.token;
+    Schedule.addOrder(cart, customer, dorm, token)
   }
   )();
 });
