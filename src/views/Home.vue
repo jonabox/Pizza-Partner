@@ -5,12 +5,19 @@
         <v-col cols="9">
           <template>
             <v-expansion-panels focusable>
-              <v-expansion-panel v-for="(items, category) in menu" v-bind:key="category.id">
+              <v-expansion-panel
+                v-for="(items, category) in menu"
+                v-bind:key="category.id"
+              >
                 <v-expansion-panel-header v-text="category" />
                 <v-expansion-panel-content>
                   <v-container fluid>
                     <v-row justify="start" align="center">
-                      <v-col v-for="item in items" v-bind:key="item.id" cols="auto">
+                      <v-col
+                        v-for="item in items"
+                        v-bind:key="item.id"
+                        cols="auto"
+                      >
                         <v-card hover max-width="300px">
                           <v-img
                             v-bind:src="item.imageURL"
@@ -20,12 +27,22 @@
                             aspect-ratio
                           >
                             <template v-slot:placeholder>
-                              <v-row class="fill-height ma-0" align="center" justify="center">
-                                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                              <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                              >
+                                <v-progress-circular
+                                  indeterminate
+                                  color="grey lighten-5"
+                                ></v-progress-circular>
                               </v-row>
                             </template>
                           </v-img>
-                          <v-card-title v-text="item.name" style="word-break: normal"></v-card-title>
+                          <v-card-title
+                            v-text="item.name"
+                            style="word-break: normal"
+                          ></v-card-title>
                           <v-card-subtitle>$5</v-card-subtitle>
                           <v-card-actions>
                             <v-spacer />
@@ -49,12 +66,16 @@
         </v-col>
         <v-col>
           <v-card dense>
-            <v-card-subtitle v-if="addedToCart.length == 0">Cart is empty</v-card-subtitle>
+            <v-card-subtitle v-if="addedToCart.length == 0"
+              >Cart is empty</v-card-subtitle
+            >
             <div v-else>
               <v-card-actions>
-                <v-card-title>Total: ${{ getTotal }}</v-card-title>
+                <v-card-title style="word-break: normal"
+                  >Total: ${{ getTotal }}</v-card-title
+                >
                 <v-spacer />
-                <v-btn color="green" class="ma-2 white--text" to="/schedule">
+                <v-btn color="green" class="ma-2 white--text">
                   checkout
                   <v-icon right dark>mdi-playlist-check</v-icon>
                 </v-btn>
@@ -65,8 +86,14 @@
                     <v-divider></v-divider>
                     <v-list-item>
                       <v-list-item-content>
-                        <v-list-item-title v-text="item.name"></v-list-item-title>
-                        <v-list-item-subtitle>Quantity: {{ item.count }}</v-list-item-subtitle>
+                        <v-list-item-title
+                          v-text="item.name"
+                          style="word-break: normal"
+                          >></v-list-item-title
+                        >
+                        <v-list-item-subtitle
+                          >Quantity: {{ item.count }}</v-list-item-subtitle
+                        >
                       </v-list-item-content>
                       <v-list-item-action>
                         <v-btn
@@ -117,7 +144,8 @@ export default {
       let total = 0;
       for (let itemCode in this.addedToCart) {
         if (this.addedToCart[itemCode].count > 0) {
-          total += this.addedToCart[itemCode].price * this.addedToCart[itemCode].count;
+          total +=
+            this.addedToCart[itemCode].price * this.addedToCart[itemCode].count;
         }
       }
       return total;

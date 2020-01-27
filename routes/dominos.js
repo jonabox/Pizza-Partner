@@ -1,4 +1,5 @@
 const express = require('express');
+const stripe = require('stripe')('sk_test_UH5YHzDrRMdIO0VOW25KzBqh00ax8Rv8fU');
 const storeID = 3748; //1033 Mass. Ave
 
 var pizzapi = require('dominos');
@@ -7,20 +8,20 @@ myStore.ID = 3748;
 
 var order = new pizzapi.Order(
   {
-    "customer":{
-      "firstName":"Jonathan",
-      "lastName":"Esteban",
-      "address":{
+    "customer": {
+      "firstName": "Jonathan",
+      "lastName": "Esteban",
+      "address": {
         "Street": "229 Vassar Street",
         "City": "Cambridge",
         "Region": "MA",
         "PostalCode": "02139"
       },
-      "email":"jesteban@mit.edu",
-      "phone":"7875480992"
+      "email": "jesteban@mit.edu",
+      "phone": "7875480992"
     },
-    "storeID":3748,
-    "deliveryMethod":"Delivery"
+    "storeID": 3748,
+    "deliveryMethod": "Delivery"
   }
 );
 
@@ -87,6 +88,28 @@ router.get('/pricing/', function (req, res) {
       res.send("$" + response.result.Order.Amounts.Payment);
     }
   );
+});
+
+/* GET /api/dominos/session page. */
+router.get('/session', function (req, res) {
+  (async () => {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{
+        name: 'T-shirt',
+        description: 'Comfortable cotton t-shirt',
+        images: ['https://example.com/t-shirt.png'],
+        amount: 500,
+        currency: 'usd',
+        quantity: 1,
+      }],
+      success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: 'https://example.com/cancel',
+    });
+    console.log("session:");
+    console.log(session);
+  }
+  )();
 });
 
 module.exports = router;

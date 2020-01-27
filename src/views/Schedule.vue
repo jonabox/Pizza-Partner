@@ -2,31 +2,22 @@
   <div class="schedule">
     <v-container fluid>
       <v-select
-          @change="getDorm"
-          :items="validDorms"
-          v-model="selectedDorm"
-          label="Select Dorm"
-          color="deep-purple"
-          item-color="deep-purple"
-          solo
-        ></v-select>
-      <p align="center">
-        Showing partnerships for {{ selectedDorm }}
-      </p>
-      <v-row
-        justify="center"
-      >
+        @change="getDorm"
+        :items="validDorms"
+        v-model="selectedDorm"
+        label="Select Dorm"
+        color="deep-purple"
+        item-color="deep-purple"
+        solo
+      ></v-select>
+      <p align="center">Showing partnerships for {{ selectedDorm }}</p>
+      <v-row justify="center">
         <v-col
           v-for="partnership in partnerships"
           v-bind:key="partnership.id"
-          cols="auto" 
+          cols="auto"
         >
-          <v-card
-            hover
-            shaped
-            outlined
-          >
-
+          <v-card hover shaped outlined>
             <v-img
               src="../assets/pizza.png"
               lazy-src="../assets/pizza-min.png"
@@ -35,27 +26,24 @@
               max-width="500"
               contain="true"
               aspect-ratio
-    >
+            >
             </v-img>
             <v-list
-            shaped dense 
-            v-for="order in partnership.orders"
-            v-bind:key="order.id"
-            class="overflow-y-auto" max-height="400"
+              shaped
+              dense
+              v-for="order in partnership.orders"
+              v-bind:key="order.id"
+              class="overflow-y-auto"
+              max-height="400"
             >
-            <v-subheader>{{ order.customer }}'s items:</v-subheader>
-                <v-list-item
-                  v-for="item in order.items"
-                  :key="item"
-                >
-                <v-list-item-content v-text="item"/>
-                </v-list-item>
-                <v-divider/>
+              <v-subheader>{{ order.customer }}'s items:</v-subheader>
+              <v-list-item v-for="item in order.items" :key="item">
+                <v-list-item-content v-text="item" />
+              </v-list-item>
+              <v-divider />
             </v-list>
 
-            <v-card-title
-              v-text="partnership.status"
-            />
+            <v-card-title v-text="partnership.status" />
           </v-card>
         </v-col>
       </v-row>
@@ -79,17 +67,16 @@ export default {
   methods: {
     getDorm: function() {
       axios
-        .get('/api/schedule/all/' + this.selectedDorm)
+        .get("/api/schedule/all/" + this.selectedDorm)
         .then(response => {
           console.log(response);
           this.partnerships = response.data;
         })
         .catch(error => console.log(error));
     }
-  }, 
+  },
   created: function() {
     this.getDorm();
   }
 };
-
 </script>
