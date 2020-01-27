@@ -104,11 +104,24 @@
         </template>
 
         <v-card>
-          <v-card-title style="word-break: normal"
+          <v-card-title
+            
+            style="word-break: normal"
             primary-title
-          >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.</v-card-title>
+          >
+          <div v-if="!selectedDorm">
+            ${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.
+          </div>
+          <div v-else>
+            ${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.
+          </div>
+          
+          </v-card-title>
 
-          <v-card-subtitle style="word-break: normal">Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
+          <v-card-subtitle
+            style="word-break: normal"
+          >Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
+          <div class="px-2">
           <card
             class="stripe-card"
             :class="{ complete }"
@@ -116,12 +129,25 @@
             :options="stripeOptions"
             @change="complete = $event.complete"
           />
-          
-
+          </div>
           <v-card-actions>
+            <v-select
+              @change="getDorm"
+              :items="validDorms"
+              v-model="selectedDorm"
+              label="Select Dorm"
+              color="deep-purple"
+              item-color="deep-purple"
+              @input="updateValue($event.target.value)"
+            ></v-select>
             <v-spacer></v-spacer>
             <v-btn color="primary" text @click="showCheck = false">close</v-btn>
-            <v-btn color="deep-purple lighten-2" class="pay-with-stripe ma-2 white--text" v-on:click="pay" :disabled="!complete">Pay with credit card</v-btn>
+            <v-btn
+              color="deep-purple lighten-2"
+              class="pay-with-stripe ma-2 white--text"
+              v-on:click="pay"
+              :disabled="!complete || !selectedDorm"
+            >Pay with credit card</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -139,9 +165,11 @@ export default {
   data() {
     return {
       menu: "",
+      validDorms: ["Simmons", "Masseeh", "Baker"],
       showCheck: false,
       addedToCart: cart,
       complete: false,
+      selectedDorm: null,
       stripeOptions: {
         hidePostalCode: false,
         style: {
@@ -203,7 +231,7 @@ export default {
 .stripe-card {
   padding: 1em;
   min-width: 100%;
-  border: 1px solid grey;
+  border: 1px solid transparent;
 }
 .stripe-card.complete {
   border-color: green;
