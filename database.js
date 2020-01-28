@@ -41,7 +41,7 @@ class Database {
   async createTables() {
     await this.query(`CREATE TABLE IF NOT EXISTS user(
         username VARCHAR(144) PRIMARY KEY,
-        password VARCHAR(144) NOT NULL
+        password VARCHAR(144) NOT NULL,
         favorite TEXT
       );`
     ).catch(err => console.log(err));
