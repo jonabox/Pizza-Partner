@@ -7,11 +7,11 @@ const app = require('../server');
 const debug = require('debug')('pizza-partner:server');
 const http = require('http');
 
-// const database = require('../database');
+const database = require('../database');
 /**
  * Create database and tables.
  */
-// database.createTables();
+database.createTables();
 
 /**
  * Normalize a port into a number, string, or false.
