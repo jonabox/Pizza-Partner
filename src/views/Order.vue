@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="order">
     <v-container fluid>
       <v-row>
         <v-col cols="9">
@@ -100,9 +100,9 @@
     <v-btn v-on:click="mockPay">mock pay</v-btn>
     <div class="text-center">
       <v-dialog v-model="showCheck" width="50%">
-        <!-- <template v-slot:activator="{ on }">
+        <template v-slot:activator="{ on }">
           <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
-        </template> -->
+        </template>
         <v-card>
           <v-card-title style="word-break: normal" primary-title>
             <div
