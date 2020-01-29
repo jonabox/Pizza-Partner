@@ -4,8 +4,10 @@
  * Module dependencies.
  */
 const app = require('../server');
+const fs = require('fs');
 const debug = require('debug')('pizza-partner:server');
 const http = require('http');
+const https = require('https');
 
 const database = require('../database');
 /**
@@ -13,6 +15,16 @@ const database = require('../database');
  */
 database.createTables();
 
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/chain.pem', 'utf8');
+
+const credentials = {
+		key: privateKey,
+			cert: certificate,
+		ca: ca
+};
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -35,13 +47,14 @@ function normalizePort(val) {
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || '8080');
+const port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
+//const server = http.createServer(app);
+const server = https.createServer(credentials, app);
 
 /**
  * Event listener for HTTP server "error" event.

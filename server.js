@@ -33,5 +33,7 @@ app.use("/api/dominos", dominosRouter);
 app.use("/api/schedule", scheduleRouter);
 app.use('/api/users', usersRouter);
 // app.use('/api/session', sessionRouter);
-
+app.get('*', (req, res) => {
+	  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 module.exports = app;
