@@ -138,16 +138,17 @@
         :fullscreen="$vuetify.breakpoint.mdAndDown"
       >
         <v-card>
-          <v-card-title style="word-break: normal" primary-title>
+          <v-card-title style="word-break: normal" primary-title class="md-2">
             <div
               v-if="!selectedDorm"
-            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe once we match you up with someone in your dorm.</div>
+            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe and a tracking link will be sent to your phone once we match you up with someone in your dorm.</div>
             <div
               v-else
-            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.</div>
+            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe and a tracking link will be sent to your phone once we match you up with someone in {{ selectedDorm }}.</div>
           </v-card-title>
 
           <v-card-subtitle
+            class="my-2"
             style="word-break: normal"
           >Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
           <div class="px-2" shrink>
