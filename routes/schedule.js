@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Schedule = require('../models/Schedule')
 
-const validDorms = ["Simmons Hall", "Masseeh Hall", "Baker House", "East Campus", "MacGregor House", "McCormick Hall", "Burton Conner", "New House", "Next House", "Random Hall"]
+const validDorms = ["Simmons Hall", "Maseeh Hall", "Baker House", "East Campus", "MacGregor House", "McCormick Hall", "Burton Conner", "New House", "Next House", "Random Hall"]
 
 /* GET /api/schedule/ page. */
 router.get('/all/:dorm', function (req, res) {

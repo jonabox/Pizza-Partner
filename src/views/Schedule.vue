@@ -52,7 +52,18 @@ export default {
   data() {
     return {
       partnerships: "",
-      ["Simmons Hall", "Maseeh Hall", "Baker House", "East Campus", "MacGregor House", "McCormick Hall", "Burton Conner", "New House", "Next House", "Random Hall"],
+      validDorms: [
+        "Simmons Hall",
+        "Maseeh Hall",
+        "Baker House",
+        "East Campus",
+        "MacGregor House",
+        "McCormick Hall",
+        "Burton Conner",
+        "New House",
+        "Next House",
+        "Random Hall"
+      ],
       selectedDorm: "Simmons Hall"
     };
   },
