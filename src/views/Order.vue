@@ -26,7 +26,7 @@
                             </template>
                           </v-img>
                           <v-card-title style="word-break: normal" v-text="item.name"></v-card-title>
-                          <v-card-subtitle>$5</v-card-subtitle>
+                          <v-card-subtitle> ${{ prices[item.code].price}}</v-card-subtitle>
                           <v-card-actions>
                             <v-spacer />
                             <v-btn
@@ -48,12 +48,47 @@
           </template>
         </v-col>
         <v-col>
+          <v-btn
+            class="mb-2"
+            outlined
+            block
+            color="deep-purple"
+            v-on:click="showLogin = true"
+            v-if="!loggedIn"
+          >Login or Register</v-btn>
+          <v-btn class="mb-2" outlined block color="deep-purple" v-on:click="saveCart()" v-else>
+            Save {{ loggedIn }}'s cart as favorite order
+            <v-icon right dark>mdi-playlist-star</v-icon>
+          </v-btn>
           <v-card dense>
-            <v-card-subtitle style="word-break: normal" v-if="getTotal == 0">Cart is empty</v-card-subtitle>
+            <div v-if="getTotal == 0">
+              <v-card-actions>
+                <v-card-subtitle style="word-break: normal">Cart is empty.</v-card-subtitle>
+                <v-spacer />
+                <v-btn
+                  v-if="loggedIn"
+                  color="deep-purple"
+                  class="ma-2 white--text"
+                  v-on:click="loadFavorite()"
+                >
+                  Load Favorite
+                  <v-icon right dark>mdi-star</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </div>
             <div v-else>
               <v-card-actions>
                 <v-card-title style="word-break: normal">Total: ${{ getTotal }}</v-card-title>
                 <v-spacer />
+                <v-btn
+                  v-if="loggedIn"
+                  color="deep-purple"
+                  class="ma-2 white--text"
+                  v-on:click="loadFavorite()"
+                >
+                  Load Favorite
+                  <v-icon right dark>mdi-star</v-icon>
+                </v-btn>
                 <v-btn color="green" class="ma-2 white--text" v-on:click="showCheck = true">
                   checkout
                   <v-icon right dark>mdi-playlist-check</v-icon>
@@ -100,17 +135,14 @@
     <v-btn v-on:click="mockPay">mock pay</v-btn>
     <div class="text-center">
       <v-dialog v-model="showCheck" width="50%">
-        <template v-slot:activator="{ on }">
-          <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
-        </template>
         <v-card>
           <v-card-title style="word-break: normal" primary-title>
             <div
               v-if="!selectedDorm"
-            >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in your dorm.</div>
+            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe once we match you up with someone in your dorm.</div>
             <div
               v-else
-            >${{ getTotal }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.</div>
+            >${{ getTotal }} and a delivery fee of ${{ getFee }} will be charged to your card via Stripe once we match you up with someone in {{ selectedDorm }}.</div>
           </v-card-title>
 
           <v-card-subtitle
@@ -137,27 +169,82 @@
               class="px-2"
             ></v-select>
             <v-form v-model="valid">
-            <v-text-field
-            v-model="customerName"
-            :rules="nameRules"
-            :counter="20"
-            label="Your Name"
-            required
-          ></v-text-field>
+              <v-text-field
+                v-model="customerName"
+                :rules="nameRules"
+                :counter="20"
+                label="Your Name"
+                required
+              ></v-text-field>
             </v-form>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="showCheck = false">close</v-btn>
+            <v-btn color="deep-purple" text @click="showCheck = false">close</v-btn>
             <v-btn
               color="deep-purple lighten-2"
               class="pay-with-stripe ma-2 white--text"
               v-on:click="pay"
               :disabled="!complete || !selectedDorm || !customerName"
             >Pay with credit card</v-btn>
-            
           </v-card-actions>
-          
         </v-card>
       </v-dialog>
+      <div class="text-center">
+        <v-dialog v-model="showLogin" width="50%">
+          <v-card>
+            <v-toolbar color="deep-purple">
+              <v-toolbar-title v-if="!isNewUser" class="white--text" style="word-break: normal">Login Form</v-toolbar-title>
+              <v-toolbar-title v-else class="white--text" style="word-break: normal">Registration Form</v-toolbar-title>
+            </v-toolbar>
+            <v-card-text>
+              <v-form v-model="validLogin">
+                <v-checkbox color="deep-purple" v-model="isNewUser" label="New Account?" />
+                <v-text-field
+                  color="deep-purple"
+                  label="Username"
+                  :rules="nameRules"
+                  :counter="20"
+                  v-model="username"
+                  prepend-icon="mdi-account"
+                  type="text"
+                  required
+                />
+
+                <v-text-field
+                  color="deep-purple"
+                  id="password"
+                  label="Password"
+                  :rules="passwordRules"
+                  v-model="password"
+                  prepend-icon="mdi-lock"
+                  type="password"
+                  required
+                />
+              </v-form>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+                v-if="!isNewUser"
+                color="deep-purple lighten-1"
+                class="ma-2 white--text"
+                v-on:click="login"
+                :disabled="!password || !username"
+              >Login</v-btn>
+              <v-btn
+                v-else
+                color="deep-purple lighten-1"
+                class="ma-2 white--text"
+                v-on:click="register"
+                :disabled="!password || !username"
+              >Register</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
+      <v-snackbar top v-model="snackbar" :timeout="timeout">
+        {{ snackbarText }}
+        <v-btn color="deep-purple lighten-2" text @click="snackbar = false">Close</v-btn>
+      </v-snackbar>
     </div>
   </div>
 </template>
@@ -165,24 +252,42 @@
 <script>
 import axios from "axios";
 import cart from "../assets/cart.json";
+import menu from "../assets/menu.json";
+import prices from "../assets/prices.json";
 import { Card, createToken } from "vue-stripe-elements-plus";
 
 export default {
   name: "home",
   data() {
     return {
-      menu: "",
+      menu: menu,
+      prices: prices,
       validDorms: ["Simmons", "Masseeh", "Baker"],
       showCheck: false,
+      showLogin: false,
+      isNewUser: false,
       addedToCart: cart,
+      savedCartString: null,
       complete: false,
       valid: false,
+      validLogin: false,
+      username: null,
+      password: null,
+      loggedIn: null,
+      loginResponse: null,
       customerName: null,
       nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 20 || 'Name must be at most 20 characters',
+        v => !!v || "Name is required",
+        v => v.length <= 20 || "Name must be at most 20 characters"
+      ],
+      passwordRules: [
+        v => !!v || "Password is required",
+        v => v.length <= 100 || "Password must be at most 100 characters"
       ],
       selectedDorm: null,
+      snackbar: false,
+      snackbarText: null,
+      timeout: 3500,
       stripeOptions: {
         hidePostalCode: false,
         style: {
@@ -201,10 +306,14 @@ export default {
       for (let itemCode in this.addedToCart) {
         if (this.addedToCart[itemCode].count > 0) {
           total +=
-            this.addedToCart[itemCode].price * this.addedToCart[itemCode].count;
+             prices[itemCode].price * this.addedToCart[itemCode].count;
         }
       }
-      return total;
+      return total.toFixed(2);
+    },
+    getFee: function() {
+      let total = this.getTotal;
+      return (total * 0.075 + 1.5).toFixed(2);
     }
   },
 
@@ -215,12 +324,20 @@ export default {
     removeFromCart: function(itemCode) {
       this.addedToCart[itemCode].count -= 1;
     },
+    loadFavorite: function() {
+      this.addedToCart = JSON.parse(this.savedCartString);
+    },
     pay() {
       createToken().then(data => {
         console.log(data.token);
-        //send token to server
+        //send token to server with order details
         axios
-          .get("/api/dominos/charge/" + data.token.id)
+          .post("/api/dominos/charge/", {
+          cart: this.addedToCart,
+          customer: this.customerName,
+          dorm: this.selectedDorm,
+          token: data.token.id
+        })
           .then(response => {
             console.log(response);
           })
@@ -241,6 +358,65 @@ export default {
           console.log(response);
         })
         .catch(error => console.log(error));
+    },
+    login() {
+      axios
+        .put("/api/users/" + this.username, {
+          password: this.password
+        })
+        .then(response => {
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = response.data.message;
+          this.loggedIn = response.data.username;
+          this.savedCartString = response.data.cart;
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error.response);
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = error.response.data.error;
+        });
+    },
+    register() {
+      axios
+        .post("/api/users/" + this.username, {
+          password: this.password
+        })
+        .then(response => {
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = response.data.message;
+          this.loggedIn = response.data.username;
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error.response);
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = error.response.data.error;
+        });
+    },
+    saveCart() {
+      //reset favorites
+      this.savedCartString = JSON.stringify(this.addedToCart);
+      axios
+        .put("/api/users/" + this.username + "/favorite", {
+          cart: this.addedToCart
+        })
+        .then(response => {
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = response.data.message;
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error.response);
+          this.showLogin = false;
+          this.snackbar = true;
+          this.snackbarText = error.response.data.error;
+        });
     }
   },
 

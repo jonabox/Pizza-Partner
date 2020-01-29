@@ -1,0 +1,307 @@
+{
+    "S_ZZ": {
+        "name": "ExtravaganZZa",
+        "price": 5.99,
+        "variant": "12SCEXTRAV"
+    },
+    "S_MX": {
+        "name": "MeatZZa",
+        "price": 5.99,
+        "variant": "12SCMEATZA"
+    },
+    "S_PIZPH": {
+        "name": "Philly Cheese Steak",
+        "price": 5.99,
+        "variant": "P12IREPH"
+    },
+    "S_PIZPV": {
+        "name": "Pacific Veggie",
+        "price": 5.99,
+        "variant": "P12IREPV"
+    },
+    "S_PIZUH": {
+        "name": "Honolulu Hawaiian",
+        "price": 5.99,
+        "variant": "P12IREUH"
+    },
+    "S_DX": {
+        "name": "Deluxe",
+        "price": 5.99,
+        "variant": "12SCDELUX"
+    },
+    "S_PIZCR": {
+        "name": "Cali Chicken Bacon Ranch",
+        "price": 5.99,
+        "variant": "P12IRECR"
+    },
+    "S_BUFC": {
+        "name": "Buffalo Chicken",
+        "price": 5.99,
+        "variant": "PSANSABC"
+    },
+    "S_CHHB": {
+        "name": "Chicken Habanero",
+        "price": 5.99,
+        "variant": "PSANSACH"
+    },
+    "S_MEDV": {
+        "name": "Mediterranean Veggie",
+        "price": 5.99,
+        "variant": "PSANSAMV"
+    },
+    "S_PHIL": {
+        "name": "Philly Cheese Steak",
+        "price": 5.99,
+        "variant": "PSANSAPH"
+    },
+    "S_CHIKK": {
+        "name": "Chicken Bacon Ranch",
+        "price": 5.99,
+        "variant": "PSANSACB"
+    },
+    "S_ITAL": {
+        "name": "Italian",
+        "price": 5.99,
+        "variant": "PSANSAIT"
+    },
+    "S_CHIKP": {
+        "name": "Chicken Parm",
+        "price": 5.99,
+        "variant": "PSANSACP"
+    },
+    "S_ALFR": {
+        "name": "Chicken Alfredo",
+        "price": 5.99,
+        "variant": "PINPASCA"
+    },
+    "S_MARIN": {
+        "name": "Italian Sausage Marinara",
+        "price": 5.99,
+        "variant": "PINPASMM"
+    },
+    "S_CARB": {
+        "name": "Chicken Carbonara",
+        "price": 5.99,
+        "variant": "PINPASCC"
+    },
+    "S_PRIM": {
+        "name": "Pasta Primavera",
+        "price": 5.99,
+        "variant": "PINPASPP"
+    },
+    "S_SCCBT": {
+        "name": "Specialty Chicken – Crispy Bacon & Tomato",
+        "price": 5.99,
+        "variant": "CKRGCBT"
+    },
+    "S_SCCHB": {
+        "name": "Specialty Chicken – Classic Hot Buffalo",
+        "price": 5.99,
+        "variant": "CKRGHTB"
+    },
+    "S_SCSJP": {
+        "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
+        "price": 5.99,
+        "variant": "CKRGSJP"
+    },
+    "S_SCSBBQ": {
+        "name": "Specialty Chicken – Sweet BBQ Bacon",
+        "price": 5.99,
+        "variant": "CKRGSBQ"
+    },
+    "S_HOTWINGS": {
+        "name": "Hot Wings",
+        "price": 5.99,
+        "variant": "W08PHOTW"
+    },
+    "S_BBQW": {
+        "name": "BBQ Wings",
+        "price": 5.99,
+        "variant": "W08PBBQW"
+    },
+    "S_MILDWING": {
+        "name": "Mild Wings",
+        "price": 5.99,
+        "variant": "W08PMLDW"
+    },
+    "S_PLNWINGS": {
+        "name": "Plain Wings",
+        "price": 5.99,
+        "variant": "W08PPLNW"
+    },
+    "S_SMANG": {
+        "name": "Sweet Mango Habanero Wings",
+        "price": 5.99,
+        "variant": "W08PMANW"
+    },
+    "S_BONELESS": {
+        "name": "Boneless Chicken",
+        "price": 5.99,
+        "variant": "W08PBNLW"
+    },
+    "F_PARMT": {
+        "name": "Parmesan Bread Twists",
+        "price": 5.99,
+        "variant": "B8PCPT"
+    },
+    "F_GARLICT": {
+        "name": "Garlic Bread Twists",
+        "price": 5.99,
+        "variant": "B8PCGT"
+    },
+    "F_SCBRD": {
+        "name": "Stuffed Cheesy Bread",
+        "price": 5.99,
+        "variant": "B8PCSCB"
+    },
+    "F_SSBRD": {
+        "name": "Stuffed Cheesy Bread with Spinach & Feta",
+        "price": 5.99,
+        "variant": "B8PCSSF"
+    },
+    "F_SBBRD": {
+        "name": "Stuffed Cheesy Bread with Bacon & Jalapeno",
+        "price": 5.99,
+        "variant": "B8PCSBJ"
+    },
+    "F_PBITES": {
+        "name": "Parmesan Bread Bites",
+        "price": 5.99,
+        "variant": "B16PBIT"
+    },
+    "F_GARDEN": {
+        "name": "Classic Garden",
+        "price": 5.99,
+        "variant": "PPSGARSA"
+    },
+    "F_CCAESAR": {
+        "name": "Chicken Caesar",
+        "price": 5.99,
+        "variant": "PPSCSRSA"
+    },
+    "F_COKE": {
+        "name": "Coke®",
+        "price": 2.99,
+        "variant": "2LCOKE"
+    },
+    "F_ZERO": {
+        "name": "Coca-Cola Zero Sugar",
+        "price": 2.99,
+        "variant": "D2LBZRO"
+    },
+    "F_DIET": {
+        "name": "Diet Coke®",
+        "price": 2.99,
+        "variant": "2LDCOKE"
+    },
+    "F_SPRITE": {
+        "name": "Sprite®",
+        "price": 2.99,
+        "variant": "2LSPRITE"
+    },
+    "F_WATER": {
+        "name": "Dasani® Bottle Water",
+        "price": 0.99,
+        "variant": "BOTTLWATER"
+    },
+    "F_ORAN": {
+        "name": "Fanta® Orange",
+        "price": 2.99,
+        "variant": "2LMMORANGE"
+    },
+    "F_LEMND": {
+        "name": "Lemonade Bottle",
+        "price": 0.99,
+        "variant": "code"
+    },
+    "F_CINNAT": {
+        "name": "Cinnamon Bread Twists",
+        "price": 5.99,
+        "variant": "B8PCCT"
+    },
+    "F_MRBRWNE": {
+        "name": "Domino's Marbled Cookie Brownie™",
+        "price": 5.99,
+        "variant": "MARBRWNE"
+    },
+    "F_LAVA": {
+        "name": "Chocolate Lava Crunch Cakes",
+        "price": 5.99,
+        "variant": "B2PCLAVA"
+    },
+    "F_HOTCUP": {
+        "name": "Kicker Hot Sauce",
+        "price": 0.60,
+        "variant": "code"
+    },
+    "F_SMHAB": {
+        "name": "Sweet Mango Habanero Sauce",
+        "price": 0.60,
+        "variant": "CEAHABC"
+    },
+    "F_BBQC": {
+        "name": "BBQ Sauce",
+        "price": 0.60,
+        "variant": "CEABBQC"
+    },
+    "F_SIDRAN": {
+        "name": "Ranch",
+        "price": 0.60,
+        "variant": "RANCH"
+    },
+    "F_Bd": {
+        "name": "Blue Cheese",
+        "price": 0.60,
+        "variant": "BLUECHS"
+    },
+    "F_SIDGAR": {
+        "name": "Garlic Dipping Sauce",
+        "price": 0.60,
+        "variant": "GARBUTTER"
+    },
+    "F_SIDICE": {
+        "name": "Icing Dipping Sauce",
+        "price": 0.60,
+        "variant": "ICING"
+    },
+    "F_SIDMAR": {
+        "name": "Marinara Dipping Sauce",
+        "price": 0.60,
+        "variant": "MARINARA"
+    },
+    "F_CAESAR": {
+        "name": "Caesar Dressing",
+        "price": 0.60,
+        "variant": "AGCAESAR"
+    },
+    "F_ITAL": {
+        "name": "Italian Dressing",
+        "price": 0.60,
+        "variant": "AGITAL"
+    },
+    "F_RANCHPK": {
+        "name": "Ranch Dressing",
+        "price": 0.60,
+        "variant": "AGRANCH"
+    },
+    "F_STJUDE": {
+        "name": "St. Jude Donation",
+        "price": 5.00,
+        "variant": "STJUDE5"
+    },
+    "F_BALVIN": {
+        "name": "Balsamic",
+        "price": 5.99,
+        "variant": "CEABVI"
+    },
+    "F_SREDPEP": {
+        "name": "Red Pepper Seasoning Flakes",
+        "price": 0.60,
+        "variant": "REASRP"
+    },
+    "F_SGPARM": {
+        "name": "Grated Parmesan Cheese",
+        "price": 0.60,
+        "variant": "REASGP"
+    }
+}

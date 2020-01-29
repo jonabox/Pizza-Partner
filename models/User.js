@@ -54,7 +54,9 @@ class Users {
    */
   static async changeFavorite(username, newFavorite) {
     try {
-      const sql = `UPDATE user SET favorite = '${newFavorite}' WHERE username='${username}';`;
+      let favoriteString = JSON.stringify(newFavorite).replace("'", "''");
+      console.log(favoriteString);
+      const sql = `UPDATE user SET favorite = '${favoriteString}' WHERE username = '${username}';`
       const response = await database.query(sql);
       return response;
     } catch (err) { throw err; }

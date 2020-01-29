@@ -11,7 +11,7 @@ for (category in menu) {
       code +
       ".jpg";
     // realMenu[category].push({"name": name, "code": code, "imageURL": url }); //use this for menu.json
-    realMenu[code] = { name: name, code: code, price: 5, count: 0 }; //use this for cart.json
+    realMenu[code] = { name: name, price: 5.99, variant: "code" }; //use this for cart.json
   }
 }
 

@@ -4,7 +4,7 @@ const config = {
     host: 'sql.mit.edu',
     user: 'jesteban',
     password: 'greenbox4lyfe',
-    database: 'jesteban+fritter',
+    database: 'jesteban+pizzapartner',
 };
 
 
@@ -12,7 +12,7 @@ class Database {
     constructor(dbConfig) {
         this.connection = mysql.createPool(dbConfig);
         // reports connection on the backend
-        this.connection.connect(function (err) {
+        this.connection.getConnection(function (err) {
             if (err) throw err;
             console.log("Connected to database!")
         });
@@ -48,7 +48,7 @@ class Database {
     }
     /* Used for testing */
     async clearTables() {
-        await this.query('TRUNCATE TABLE users');
+        await this.query('TRUNCATE TABLE user');
     }
 }
 

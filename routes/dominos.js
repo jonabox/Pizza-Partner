@@ -1,37 +1,16 @@
 const express = require('express');
 const Schedule = require('../models/Schedule');
+
+const router = express.Router();
+const menu = require('../menu.json');
+const bigMenu = require('../bigMenu.json');
+
 const storeID = 3748; //1033 Mass. Ave
 const stripe = require('stripe')('sk_test_UH5YHzDrRMdIO0VOW25KzBqh00ax8Rv8fU');
 
 var pizzapi = require('dominos');
 var myStore = new pizzapi.Store(storeID);
 myStore.ID = 3748;
-
-var order = new pizzapi.Order(
-  {
-    "customer": {
-      "firstName": "Jonathan",
-      "lastName": "Esteban",
-      "address": {
-        "Street": "229 Vassar Street",
-        "City": "Cambridge",
-        "Region": "MA",
-        "PostalCode": "02139"
-      },
-      "email": "jesteban@mit.edu",
-      "phone": "7875480992"
-    },
-    "storeID": 3748,
-    "deliveryMethod": "Delivery"
-  }
-);
-
-order.StoreID = 3748;
-order.StoreOrderID = order.storeID;
-
-const router = express.Router();
-const menu = require('../menu.json');
-const bigMenu = require('../bigMenu.json');
 
 /* GET /api/dominos page. */
 router.get('/', function (req, res) {
@@ -91,43 +70,6 @@ router.get('/pricing/', function (req, res) {
   );
 });
 
-/* GET /api/dominos/session page. */
-router.get('/session/:total', function (req, res) {
-  (async () => {
-    let total = req.params.total;
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [{
-        name: 'Pizza',
-        description: 'Order from Pizza Partner',
-        images: ['https://example.com/t-shirt.png'],
-        amount: total,
-        currency: 'usd',
-        quantity: 1,
-      }],
-      success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'https://example.com/cancel',
-    });
-    console.log("session:");
-    console.log(session);
-  }
-  )();
-});
-
-/* GET /api/dominos/session page. */
-router.get('/charge/:token', function (req, res) {
-  (async () => {
-    let token = req.params.token;
-    const charge = await stripe.charges.create({
-      amount: 50 * 100,
-      currency: 'usd',
-      description: 'Example charge',
-      source: token,
-    });
-    console.log(charge);
-  }
-  )();
-});
 /* POST /api/dominos/session page. MOCK*/
 router.post('/charge/', function (req, res) {
   (async () => {

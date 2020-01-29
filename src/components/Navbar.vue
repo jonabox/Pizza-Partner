@@ -14,15 +14,14 @@
         contain
         min-width="100"
         width="100"
-      >
-        Pizza Partner
-      </v-toolbar-title>
+      >Pizza Partner</v-toolbar-title>
     </div>
     <v-tabs background-color="deep-purple" dark right>
       <v-tab to="/">welcome</v-tab>
       <v-tab to="/order">order</v-tab>
       <v-tab to="/schedule">schedule</v-tab>
     </v-tabs>
+    
   </v-app-bar>
 </template>
 

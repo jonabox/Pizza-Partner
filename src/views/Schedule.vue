@@ -17,7 +17,7 @@
           v-bind:key="partnership.id"
           cols="auto"
         >
-          <v-card hover shaped outlined>
+          <v-card min-height="500" min-width="500" hover shaped outlined>
             <v-list
               shaped
               dense
@@ -34,8 +34,9 @@
               </v-list-item>
               <v-divider />
             </v-list>
-
+            <v-footer absolute>
             <v-card-title v-text="partnership.status" />
+            </v-footer>
           </v-card>
         </v-col>
       </v-row>

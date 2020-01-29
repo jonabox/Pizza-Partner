@@ -9,7 +9,7 @@ const path = require("path");
 const indexRouter = require("./routes/index");
 const dominosRouter = require("./routes/dominos");
 const scheduleRouter = require("./routes/schedule");
-// const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
 // const sessionRouter = require('./routes/session');
 
 const app = express();
@@ -31,7 +31,7 @@ app.use("/", indexRouter);
 app.use("/api", indexRouter);
 app.use("/api/dominos", dominosRouter);
 app.use("/api/schedule", scheduleRouter);
-// app.use('/api/users', usersRouter);
+app.use('/api/users', usersRouter);
 // app.use('/api/session', sessionRouter);
 
 module.exports = app;
