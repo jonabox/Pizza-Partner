@@ -2,16 +2,18 @@ const menu = require("./menu copy.json");
 let realMenu = {};
 for (category in menu) {
   let items = menu[category];
+  realMenu[category] = [];
   for (item of items) {
     realItem = {};
     let name = Object.keys(item)[0];
     let code = item[name];
     let url =
-      "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/" +
+      "../assets/pictures/" +
       code +
       ".jpg";
-    // realMenu[category].push({"name": name, "code": code, "imageURL": url }); //use this for menu.json
-    realMenu[code] = { name: name, price: 5.99, variant: "code" }; //use this for cart.json
+    realMenu[category].push({"name": name, "code": code, "imageURL": url }); //use this for menu.json
+    // urls.push(url); //use this for menu.json
+    // realMenu[code] = { name: name, price: 5.99, variant: "code" }; //use this for cart.json
   }
 }
 

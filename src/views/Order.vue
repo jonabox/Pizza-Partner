@@ -2,52 +2,50 @@
   <div class="order">
     <v-container fluid>
       <v-row>
-        <v-col cols="9">
-          <template>
-            <v-expansion-panels focusable>
-              <v-expansion-panel v-for="(items, category) in menu" v-bind:key="category.id">
-                <v-expansion-panel-header v-text="category" />
-                <v-expansion-panel-content>
-                  <v-container fluid>
-                    <v-row justify="start" align="center">
-                      <v-col v-for="item in items" v-bind:key="item.id" cols="auto">
-                        <v-card hover max-width="300px">
-                          <v-img
-                            v-bind:src="item.imageURL"
-                            lazy-src="../assets/pizza-min.png"
-                            class="black--text align-end"
-                            gradient="to bottom, rgba(0,0,0,0) 80%, white 100%"
-                            aspect-ratio
-                          >
-                            <template v-slot:placeholder>
-                              <v-row class="fill-height ma-0" align="center" justify="center">
-                                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                              </v-row>
-                            </template>
-                          </v-img>
-                          <v-card-title style="word-break: normal" v-text="item.name"></v-card-title>
-                          <v-card-subtitle> ${{ prices[item.code].price}}</v-card-subtitle>
-                          <v-card-actions>
-                            <v-spacer />
-                            <v-btn
-                              color="deep-purple lighten-2"
-                              class="ma-2 white--text"
-                              v-on:click="addToCart(item.code)"
-                            >
-                              Add to order
-                              <v-icon right dark>mdi-playlist-plus</v-icon>
-                            </v-btn>
-                          </v-card-actions>
-                        </v-card>
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </template>
-        </v-col>
         <v-col>
+          <v-expansion-panels focusable>
+            <v-expansion-panel v-for="(items, category) in menu" v-bind:key="category.id">
+              <v-expansion-panel-header v-text="category" />
+              <v-expansion-panel-content>
+                <v-container fluid>
+                  <v-row justify="space-around" align="center">
+                    <v-col v-for="item in items" v-bind:key="item.id" cols="auto">
+                      <v-card hover max-width="300px">
+                        <v-img
+                          v-bind:src="getImageURL(item.code)"
+                          lazy-src="../assets/pizza-min.png"
+                          class="black--text align-end"
+                          gradient="to bottom, rgba(0,0,0,0) 80%, white 100%"
+                          aspect-ratio
+                        >
+                          <template v-slot:placeholder>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                            </v-row>
+                          </template>
+                        </v-img>
+                        <v-card-title style="word-break: normal" v-text="item.name"></v-card-title>
+                        <v-card-subtitle>${{ prices[item.code].price.toFixed(2)}}</v-card-subtitle>
+                        <v-card-actions>
+                          <v-spacer />
+                          <v-btn
+                            color="deep-purple lighten-2"
+                            class="ma-2 white--text"
+                            v-on:click="addToCart(item.code)"
+                          >
+                            Add to order
+                            <v-icon right dark>mdi-playlist-plus</v-icon>
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-col>
+        <v-col cols="auto">
           <v-btn
             class="mb-2"
             outlined
@@ -56,7 +54,7 @@
             v-on:click="showLogin = true"
             v-if="!loggedIn"
           >Login or Register</v-btn>
-          <v-btn class="mb-2" outlined block color="deep-purple" v-on:click="saveCart()" v-else>
+          <v-btn outlined block color="deep-purple" v-on:click="saveCart()" v-else>
             Save {{ loggedIn }}'s cart as favorite order
             <v-icon right dark>mdi-playlist-star</v-icon>
           </v-btn>
@@ -67,7 +65,7 @@
                 <v-spacer />
                 <v-btn
                   v-if="loggedIn"
-                  color="deep-purple"
+                  color="deep-purple lighten-1"
                   class="ma-2 white--text"
                   v-on:click="loadFavorite()"
                 >
@@ -82,7 +80,7 @@
                 <v-spacer />
                 <v-btn
                   v-if="loggedIn"
-                  color="deep-purple"
+                  color="deep-purple lighten-1"
                   class="ma-2 white--text"
                   v-on:click="loadFavorite()"
                 >
@@ -132,9 +130,13 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-btn v-on:click="mockPay">mock pay</v-btn>
     <div class="text-center">
-      <v-dialog v-model="showCheck" width="50%">
+      <v-dialog
+        v-model="showCheck"
+        width="75%"
+        scrollable
+        :fullscreen="$vuetify.breakpoint.mdAndDown"
+      >
         <v-card>
           <v-card-title style="word-break: normal" primary-title>
             <div
@@ -148,7 +150,7 @@
           <v-card-subtitle
             style="word-break: normal"
           >Please provide your payment details. For testing, spam '42.'</v-card-subtitle>
-          <div class="px-2">
+          <div class="px-2" shrink>
             <card
               class="stripe-card"
               :class="{ complete }"
@@ -157,7 +159,7 @@
               @change="complete = $event.complete"
             />
           </div>
-          <v-card-actions>
+          <v-form v-model="valid">
             <v-select
               @change="getDorm"
               :items="validDorms"
@@ -168,32 +170,55 @@
               @input="updateValue($event.target.value)"
               class="px-2"
             ></v-select>
-            <v-form v-model="valid">
-              <v-text-field
-                v-model="customerName"
-                :rules="nameRules"
-                :counter="20"
-                label="Your Name"
-                required
-              ></v-text-field>
-            </v-form>
-            <v-spacer></v-spacer>
-            <v-btn color="deep-purple" text @click="showCheck = false">close</v-btn>
-            <v-btn
-              color="deep-purple lighten-2"
-              class="pay-with-stripe ma-2 white--text"
-              v-on:click="pay"
-              :disabled="!complete || !selectedDorm || !customerName"
-            >Pay with credit card</v-btn>
+            <v-text-field
+              color="deep-purple"
+              v-model="customerName"
+              :rules="nameRules"
+              :counter="20"
+              label="Your Name"
+              class="px-2"
+              required
+            ></v-text-field>
+
+            <v-text-field
+              color="deep-purple"
+              v-model="customerPhone"
+              :rules="phoneRules"
+              :counter="20"
+              label="Your Phone Number"
+              class="px-2"
+              required
+            ></v-text-field>
+          </v-form>
+          <v-card-actions>
+            <v-footer :absolute="$vuetify.breakpoint.mdAndDown" min-width="100%">
+              <v-spacer></v-spacer>
+              <v-btn small color="deep-purple" text @click="showCheck = false">close</v-btn>
+              <v-btn
+                small
+                color="deep-purple lighten-2"
+                class="pay-with-stripe ma-2 white--text"
+                v-on:click="pay"
+                :disabled="!complete || !selectedDorm || !customerName || !customerPhone"
+              >Pay with credit card</v-btn>
+            </v-footer>
           </v-card-actions>
         </v-card>
       </v-dialog>
       <div class="text-center">
-        <v-dialog v-model="showLogin" width="50%">
+        <v-dialog v-model="showLogin" width="75%">
           <v-card>
             <v-toolbar color="deep-purple">
-              <v-toolbar-title v-if="!isNewUser" class="white--text" style="word-break: normal">Login Form</v-toolbar-title>
-              <v-toolbar-title v-else class="white--text" style="word-break: normal">Registration Form</v-toolbar-title>
+              <v-toolbar-title
+                v-if="!isNewUser"
+                class="white--text"
+                style="word-break: normal"
+              >Login Form</v-toolbar-title>
+              <v-toolbar-title
+                v-else
+                class="white--text"
+                style="word-break: normal"
+              >Registration Form</v-toolbar-title>
             </v-toolbar>
             <v-card-text>
               <v-form v-model="validLogin">
@@ -262,7 +287,18 @@ export default {
     return {
       menu: menu,
       prices: prices,
-      validDorms: ["Simmons", "Masseeh", "Baker"],
+      validDorms: [
+        "Simmons Hall",
+        "Masseeh Hall",
+        "Baker House",
+        "East Campus",
+        "MacGregor House",
+        "McCormick Hall",
+        "Burton Conner",
+        "New House",
+        "Next House",
+        "Random Hall"
+      ],
       showCheck: false,
       showLogin: false,
       isNewUser: false,
@@ -276,9 +312,14 @@ export default {
       loggedIn: null,
       loginResponse: null,
       customerName: null,
+      customerPhone: null,
       nameRules: [
         v => !!v || "Name is required",
         v => v.length <= 20 || "Name must be at most 20 characters"
+      ],
+      phoneRules: [
+        v => !!v || "Phone is required",
+        v => /^\d+$/.test(v) || "Phone may only contain digits"
       ],
       passwordRules: [
         v => !!v || "Password is required",
@@ -292,7 +333,7 @@ export default {
         hidePostalCode: false,
         style: {
           base: {
-            fontSize: "32px"
+            fontSize: "16px"
           }
         }
       }
@@ -305,8 +346,7 @@ export default {
       let total = 0;
       for (let itemCode in this.addedToCart) {
         if (this.addedToCart[itemCode].count > 0) {
-          total +=
-             prices[itemCode].price * this.addedToCart[itemCode].count;
+          total += prices[itemCode].price * this.addedToCart[itemCode].count;
         }
       }
       return total.toFixed(2);
@@ -318,6 +358,10 @@ export default {
   },
 
   methods: {
+    getImageURL: function(itemCode) {
+      var images = require.context("../assets/pictures/", false, /\.jpg$/);
+      return images("./" + itemCode + ".jpg");
+    },
     addToCart: function(itemCode) {
       this.addedToCart[itemCode].count += 1;
     },
@@ -333,12 +377,15 @@ export default {
         //send token to server with order details
         axios
           .post("/api/dominos/charge/", {
-          cart: this.addedToCart,
-          customer: this.customerName,
-          dorm: this.selectedDorm,
-          token: data.token.id
-        })
+            cart: this.addedToCart,
+            customer: this.customerName,
+            dorm: this.selectedDorm,
+            token: data.token.id
+          })
           .then(response => {
+            this.showCheck = false;
+            this.snackbar = true;
+            this.snackbarText = response.data.message;
             console.log(response);
           })
           .catch(error => console.log(error));

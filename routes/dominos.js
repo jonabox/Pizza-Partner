@@ -78,6 +78,7 @@ router.post('/charge/', function (req, res) {
     let dorm = req.body.dorm;
     let token = req.body.token;
     Schedule.addOrder(cart, customer, dorm, token)
+    res.json({ message: "Order has been placed!"})
   }
   )();
 });

@@ -16,10 +16,10 @@ router.put('/:username', async (req, res) => {
     const getUser = await Users.findUser(username);
     let user = getUser[0];
     if (!user) {
-        res.status(404).json({error: "Account with username not found", }).end();
+        res.status(404).json({error: "account with username not found", }).end();
     }
     else if (inputPassword !== user.password) {
-        res.status(403).json({error: "Account password incorrect", }).end();
+        res.status(403).json({error: "username or password is incorrect", }).end();
     }
     else {
         // req.session.user = username;
@@ -43,14 +43,14 @@ router.post('/:username', async (req, res) => {
     // check if user in db
     if (user) {
         res.status(400).json({
-            error: `Username already registered`,
+            error: `username already registered`,
           }).end();
     }
 
     else {
         await Users.createUser(username, password);
         console.log("username: " + username + " created")
-        res.json({ message: `Account ${username} created! Please sign in.`, username: username})
+        res.json({ message: `account ${username} created!`, username: username})
     }
 });
 
@@ -70,7 +70,7 @@ router.get('/:username/favorite', async (req, res) => {
         res.send(user.favorite);
     }
     else {
-        res.status(403).json({error: "Error updating favorite order", }).end();
+        res.status(403).json({error: "rrror updating favorite order", }).end();
     }
 });
 
@@ -90,7 +90,7 @@ router.put('/:username/favorite', async (req, res) => {
         res.json({ message: `${username}'s favorite order has been updated!`})
     }
     else {
-        res.status(403).json({error: "Error updating favorite order", }).end();
+        res.status(403).json({error: "error updating favorite order", }).end();
     }
 });
 

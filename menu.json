@@ -3,323 +3,323 @@
     {
       "name": "ExtravaganZZa",
       "code": "S_ZZ",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_ZZ.jpg"
+      "imageURL": "../assets/pictures/S_ZZ.jpg"
     },
     {
       "name": "MeatZZa",
       "code": "S_MX",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_MX.jpg"
+      "imageURL": "../assets/pictures/S_MX.jpg"
     },
     {
       "name": "Philly Cheese Steak",
       "code": "S_PIZPH",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PIZPH.jpg"
+      "imageURL": "../assets/pictures/S_PIZPH.jpg"
     },
     {
       "name": "Pacific Veggie",
       "code": "S_PIZPV",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PIZPV.jpg"
+      "imageURL": "../assets/pictures/S_PIZPV.jpg"
     },
     {
       "name": "Honolulu Hawaiian",
       "code": "S_PIZUH",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PIZUH.jpg"
+      "imageURL": "../assets/pictures/S_PIZUH.jpg"
     },
     {
       "name": "Deluxe",
       "code": "S_DX",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_DX.jpg"
+      "imageURL": "../assets/pictures/S_DX.jpg"
     },
     {
       "name": "Cali Chicken Bacon Ranch",
       "code": "S_PIZCR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PIZCR.jpg"
+      "imageURL": "../assets/pictures/S_PIZCR.jpg"
     }
   ],
   "Sandwiches": [
     {
       "name": "Buffalo Chicken",
       "code": "S_BUFC",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_BUFC.jpg"
+      "imageURL": "../assets/pictures/S_BUFC.jpg"
     },
     {
       "name": "Chicken Habanero",
       "code": "S_CHHB",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_CHHB.jpg"
+      "imageURL": "../assets/pictures/S_CHHB.jpg"
     },
     {
       "name": "Mediterranean Veggie",
       "code": "S_MEDV",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_MEDV.jpg"
+      "imageURL": "../assets/pictures/S_MEDV.jpg"
     },
     {
       "name": "Philly Cheese Steak",
       "code": "S_PHIL",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PHIL.jpg"
+      "imageURL": "../assets/pictures/S_PHIL.jpg"
     },
     {
       "name": "Chicken Bacon Ranch",
       "code": "S_CHIKK",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_CHIKK.jpg"
+      "imageURL": "../assets/pictures/S_CHIKK.jpg"
     },
     {
       "name": "Italian",
       "code": "S_ITAL",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_ITAL.jpg"
+      "imageURL": "../assets/pictures/S_ITAL.jpg"
     },
     {
       "name": "Chicken Parm",
       "code": "S_CHIKP",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_CHIKP.jpg"
+      "imageURL": "../assets/pictures/S_CHIKP.jpg"
     }
   ],
   "Pasta": [
     {
       "name": "Chicken Alfredo",
       "code": "S_ALFR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_ALFR.jpg"
+      "imageURL": "../assets/pictures/S_ALFR.jpg"
     },
     {
       "name": "Italian Sausage Marinara",
       "code": "S_MARIN",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_MARIN.jpg"
+      "imageURL": "../assets/pictures/S_MARIN.jpg"
     },
     {
       "name": "Chicken Carbonara",
       "code": "S_CARB",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_CARB.jpg"
+      "imageURL": "../assets/pictures/S_CARB.jpg"
     },
     {
       "name": "Pasta Primavera",
       "code": "S_PRIM",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PRIM.jpg"
+      "imageURL": "../assets/pictures/S_PRIM.jpg"
     }
   ],
   "Chicken": [
     {
       "name": "Specialty Chicken – Crispy Bacon & Tomato",
       "code": "S_SCCBT",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_SCCBT.jpg"
+      "imageURL": "../assets/pictures/S_SCCBT.jpg"
     },
     {
       "name": "Specialty Chicken – Classic Hot Buffalo",
       "code": "S_SCCHB",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_SCCHB.jpg"
+      "imageURL": "../assets/pictures/S_SCCHB.jpg"
     },
     {
       "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
       "code": "S_SCSJP",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_SCSJP.jpg"
+      "imageURL": "../assets/pictures/S_SCSJP.jpg"
     },
     {
       "name": "Specialty Chicken – Sweet BBQ Bacon",
       "code": "S_SCSBBQ",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_SCSBBQ.jpg"
+      "imageURL": "../assets/pictures/S_SCSBBQ.jpg"
     },
     {
       "name": "Hot Wings",
       "code": "S_HOTWINGS",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_HOTWINGS.jpg"
+      "imageURL": "../assets/pictures/S_HOTWINGS.jpg"
     },
     {
       "name": "BBQ Wings",
       "code": "S_BBQW",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_BBQW.jpg"
+      "imageURL": "../assets/pictures/S_BBQW.jpg"
     },
     {
       "name": "Mild Wings",
       "code": "S_MILDWING",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_MILDWING.jpg"
+      "imageURL": "../assets/pictures/S_MILDWING.jpg"
     },
     {
       "name": "Plain Wings",
       "code": "S_PLNWINGS",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_PLNWINGS.jpg"
+      "imageURL": "../assets/pictures/S_PLNWINGS.jpg"
     },
     {
       "name": "Sweet Mango Habanero Wings",
       "code": "S_SMANG",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_SMANG.jpg"
+      "imageURL": "../assets/pictures/S_SMANG.jpg"
     },
     {
       "name": "Boneless Chicken",
       "code": "S_BONELESS",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/S_BONELESS.jpg"
+      "imageURL": "../assets/pictures/S_BONELESS.jpg"
     }
   ],
   "Breads": [
     {
       "name": "Parmesan Bread Twists",
       "code": "F_PARMT",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_PARMT.jpg"
+      "imageURL": "../assets/pictures/F_PARMT.jpg"
     },
     {
       "name": "Garlic Bread Twists",
       "code": "F_GARLICT",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_GARLICT.jpg"
+      "imageURL": "../assets/pictures/F_GARLICT.jpg"
     },
     {
       "name": "Stuffed Cheesy Bread",
       "code": "F_SCBRD",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SCBRD.jpg"
+      "imageURL": "../assets/pictures/F_SCBRD.jpg"
     },
     {
       "name": "Stuffed Cheesy Bread with Spinach & Feta",
       "code": "F_SSBRD",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SSBRD.jpg"
+      "imageURL": "../assets/pictures/F_SSBRD.jpg"
     },
     {
       "name": "Stuffed Cheesy Bread with Bacon & Jalapeno",
       "code": "F_SBBRD",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SBBRD.jpg"
+      "imageURL": "../assets/pictures/F_SBBRD.jpg"
     },
     {
       "name": "Parmesan Bread Bites",
       "code": "F_PBITES",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_PBITES.jpg"
+      "imageURL": "../assets/pictures/F_PBITES.jpg"
     }
   ],
   "Salads": [
     {
       "name": "Classic Garden",
       "code": "F_GARDEN",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_GARDEN.jpg"
+      "imageURL": "../assets/pictures/F_GARDEN.jpg"
     },
     {
       "name": "Chicken Caesar",
       "code": "F_CCAESAR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_CCAESAR.jpg"
+      "imageURL": "../assets/pictures/F_CCAESAR.jpg"
     }
   ],
   "Drinks": [
     {
       "name": "Coke®",
       "code": "F_COKE",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_COKE.jpg"
+      "imageURL": "../assets/pictures/F_COKE.jpg"
     },
     {
       "name": "Coca-Cola Zero Sugar",
       "code": "F_ZERO",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_ZERO.jpg"
+      "imageURL": "../assets/pictures/F_ZERO.jpg"
     },
     {
       "name": "Diet Coke®",
       "code": "F_DIET",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_DIET.jpg"
+      "imageURL": "../assets/pictures/F_DIET.jpg"
     },
     {
       "name": "Sprite®",
       "code": "F_SPRITE",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SPRITE.jpg"
+      "imageURL": "../assets/pictures/F_SPRITE.jpg"
     },
     {
       "name": "Dasani® Bottle Water",
       "code": "F_WATER",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_WATER.jpg"
+      "imageURL": "../assets/pictures/F_WATER.jpg"
     },
     {
       "name": "Fanta® Orange",
       "code": "F_ORAN",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_ORAN.jpg"
+      "imageURL": "../assets/pictures/F_ORAN.jpg"
     },
     {
       "name": "Lemonade Bottle",
       "code": "F_LEMND",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_LEMND.jpg"
+      "imageURL": "../assets/pictures/F_LEMND.jpg"
     }
   ],
   "Desserts": [
     {
       "name": "Cinnamon Bread Twists",
       "code": "F_CINNAT",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_CINNAT.jpg"
+      "imageURL": "../assets/pictures/F_CINNAT.jpg"
     },
     {
       "name": "Domino's Marbled Cookie Brownie™",
       "code": "F_MRBRWNE",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_MRBRWNE.jpg"
+      "imageURL": "../assets/pictures/F_MRBRWNE.jpg"
     },
     {
       "name": "Chocolate Lava Crunch Cakes",
       "code": "F_LAVA",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_LAVA.jpg"
+      "imageURL": "../assets/pictures/F_LAVA.jpg"
     }
   ],
   "Extras": [
     {
       "name": "Kicker Hot Sauce",
       "code": "F_HOTCUP",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_HOTCUP.jpg"
+      "imageURL": "../assets/pictures/F_HOTCUP.jpg"
     },
     {
       "name": "Sweet Mango Habanero Sauce",
       "code": "F_SMHAB",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SMHAB.jpg"
+      "imageURL": "../assets/pictures/F_SMHAB.jpg"
     },
     {
       "name": "BBQ Sauce",
       "code": "F_BBQC",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_BBQC.jpg"
+      "imageURL": "../assets/pictures/F_BBQC.jpg"
     },
     {
       "name": "Ranch",
       "code": "F_SIDRAN",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SIDRAN.jpg"
+      "imageURL": "../assets/pictures/F_SIDRAN.jpg"
     },
     {
       "name": "Blue Cheese",
       "code": "F_Bd",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_Bd.jpg"
+      "imageURL": "../assets/pictures/F_Bd.jpg"
     },
     {
       "name": "Garlic Dipping Sauce",
       "code": "F_SIDGAR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SIDGAR.jpg"
+      "imageURL": "../assets/pictures/F_SIDGAR.jpg"
     },
     {
       "name": "Icing Dipping Sauce",
       "code": "F_SIDICE",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SIDICE.jpg"
+      "imageURL": "../assets/pictures/F_SIDICE.jpg"
     },
     {
       "name": "Marinara Dipping Sauce",
       "code": "F_SIDMAR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SIDMAR.jpg"
+      "imageURL": "../assets/pictures/F_SIDMAR.jpg"
     },
     {
       "name": "Caesar Dressing",
       "code": "F_CAESAR",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_CAESAR.jpg"
+      "imageURL": "../assets/pictures/F_CAESAR.jpg"
     },
     {
       "name": "Italian Dressing",
       "code": "F_ITAL",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_ITAL.jpg"
+      "imageURL": "../assets/pictures/F_ITAL.jpg"
     },
     {
       "name": "Ranch Dressing",
       "code": "F_RANCHPK",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_RANCHPK.jpg"
+      "imageURL": "../assets/pictures/F_RANCHPK.jpg"
     },
     {
       "name": "St. Jude Donation",
       "code": "F_STJUDE",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_STJUDE.jpg"
+      "imageURL": "../assets/pictures/F_STJUDE.jpg"
     },
     {
       "name": "Balsamic",
       "code": "F_BALVIN",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_BALVIN.jpg"
+      "imageURL": "../assets/pictures/F_BALVIN.jpg"
     },
     {
       "name": "Red Pepper Seasoning Flakes",
       "code": "F_SREDPEP",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SREDPEP.jpg"
+      "imageURL": "../assets/pictures/F_SREDPEP.jpg"
     },
     {
       "name": "Grated Parmesan Cheese",
       "code": "F_SGPARM",
-      "imageURL": "https://cache.dominos.com/olo/6_9_2/assets/build/market/US/_en/images/img/products/larges/F_SGPARM.jpg"
+      "imageURL": "../assets/pictures/F_SGPARM.jpg"
     }
   ]
 }

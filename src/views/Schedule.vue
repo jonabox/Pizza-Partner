@@ -17,7 +17,7 @@
           v-bind:key="partnership.id"
           cols="auto"
         >
-          <v-card min-height="500" min-width="500" hover shaped outlined>
+          <v-card min-height="65vh" min-width="20vw" hover shaped outlined>
             <v-list
               shaped
               dense
@@ -28,14 +28,14 @@
             >
               <v-subheader>{{ order.customer }}'s items:</v-subheader>
               <v-list-item v-for="item in order.items" :key="item">
-                <v-list-item-content>
+                <v-list-item-content style="word-break: normal">
                    {{item.name}} ({{item.count}}x)
                 </v-list-item-content>
               </v-list-item>
               <v-divider />
             </v-list>
-            <v-footer absolute>
-            <v-card-title v-text="partnership.status" />
+            <v-footer absolute >
+            <v-card-title style="word-break: normal" v-text="partnership.status" />
             </v-footer>
           </v-card>
         </v-col>
@@ -51,9 +51,9 @@ export default {
   name: "schedule",
   data() {
     return {
-      partnerships: "hey",
-      validDorms: ["Simmons", "Masseeh"],
-      selectedDorm: "Simmons"
+      partnerships: "",
+      validDorms: ["Simmons Hall", "Masseeh Hall", "Baker House", "East Campus", "MacGregor House", "McCormick Hall", "Burton Conner", "New House", "Next House", "Random Hall"],
+      selectedDorm: "Simmons Hall"
     };
   },
 
