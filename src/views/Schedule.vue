@@ -10,7 +10,7 @@
         item-color="deep-purple"
         solo
       ></v-select>
-      <v-parallax height="150" v-bind:src="getImageURL(selectedDorm)">
+      <v-parallax height="100" v-bind:src="getImageURL(selectedDorm)">
         <v-row align="center" justify="center">
           <v-col class="text-center" cols="12">
             <h1 class="display-1 font-weight-bold mb-4">Showing partnerships for {{ selectedDorm }}</h1>
@@ -52,18 +52,7 @@ export default {
   data() {
     return {
       partnerships: "",
-      validDorms: [
-        "Simmons Hall",
-        "Masseeh Hall",
-        "Baker House",
-        "East Campus",
-        "MacGregor House",
-        "McCormick Hall",
-        "Burton Conner",
-        "New House",
-        "Next House",
-        "Random Hall"
-      ],
+      ["Simmons Hall", "Maseeh Hall", "Baker House", "East Campus", "MacGregor House", "McCormick Hall", "Burton Conner", "New House", "Next House", "Random Hall"],
       selectedDorm: "Simmons Hall"
     };
   },

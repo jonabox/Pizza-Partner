@@ -290,7 +290,7 @@ export default {
       prices: prices,
       validDorms: [
         "Simmons Hall",
-        "Masseeh Hall",
+        "Maseeh Hall",
         "Baker House",
         "East Campus",
         "MacGregor House",
