@@ -9,22 +9,26 @@ const debug = require('debug')('pizza-partner:server');
 const http = require('http');
 const https = require('https');
 
+var isDebug = true;
+
 const database = require('../database');
 /**
  * Create database and tables.
  */
 database.createTables();
 
-// Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/chain.pem', 'utf8');
+if(isDebug){
+  // Certificate
+  const privateKey = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/privkey.pem', 'utf8');
+  const certificate = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/cert.pem', 'utf8');
+  const ca = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/chain.pem', 'utf8');
 
-const credentials = {
+  const credentials = {
 		key: privateKey,
 			cert: certificate,
 		ca: ca
-};
+  };
+}
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -53,8 +57,8 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-//const server = http.createServer(app);
-const server = https.createServer(credentials, app);
+if(isDebug){const server = http.createServer(app);}
+else{const server = https.createServer(credentials, app);}
 
 /**
  * Event listener for HTTP server "error" event.
