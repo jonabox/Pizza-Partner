@@ -57,8 +57,8 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-if(isDebug){const server = http.createServer(app);}
-else{const server = https.createServer(credentials, app);}
+const server = http.createServer(app);
+if(!isDebug){const server = https.createServer(credentials, app);}
 
 /**
  * Event listener for HTTP server "error" event.
