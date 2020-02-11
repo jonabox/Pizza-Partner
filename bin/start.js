@@ -17,7 +17,7 @@ const database = require('../database');
  */
 database.createTables();
 
-if(isDebug){
+if(!isDebug){
   // Certificate
   const privateKey = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/privkey.pem', 'utf8');
   const certificate = fs.readFileSync('/etc/letsencrypt/live/jonabox.com/cert.pem', 'utf8');
