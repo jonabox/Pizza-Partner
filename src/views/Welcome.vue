@@ -64,7 +64,7 @@ export default {
       },
       {
         color: "deep-purple accent-5",
-        title: "Pickup Your Order!",
+        title: "Pick up Your Order!",
         text:
           "We will update you on how your order is doing once it is placed. Once it arrives to your dorm, either you or your partner can pick it up. You are allowed sign the order on the Pizza Partner's behalf.",
         icon: "mdi-pizza"
