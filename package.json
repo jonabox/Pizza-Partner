@@ -9,7 +9,7 @@
     "start": "node ./bin/start.js"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "core-js": "^3.4.4",
     "dominos": "^2.1.1",
     "express": "^4.17.1",
