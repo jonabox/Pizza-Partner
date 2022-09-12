@@ -53,7 +53,7 @@ export default {
         title: "Checkout!",
         text:
           "Once you are ready to order. Hit that checkout button and input your name, dorm, and card details. Don't worry, Stripe handles all transactions and we never store your card information.",
-        icon: "mdi-account-card-details"
+        icon: "mdi-currency-usd"
       },
       {
         color: "deep-purple accent-2",
