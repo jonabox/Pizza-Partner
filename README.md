@@ -1,4 +1,4 @@
-# pizza-partner
+# pizza partner
 
 ## Project setup
 ```
